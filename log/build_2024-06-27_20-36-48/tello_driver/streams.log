@@ -1,0 +1,46 @@
+[0.009s] Invoking command in '/home/sonia/orbslam3-tello-drone/build/tello_driver': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/sonia/orbslam3-tello-drone/src/tello_driver -DCMAKE_INSTALL_PREFIX=/home/sonia/orbslam3-tello-drone/install/tello_driver
+[0.078s] -- The C compiler identification is GNU 9.4.0
+[0.180s] -- The CXX compiler identification is GNU 9.4.0
+[0.188s] -- Check for working C compiler: /usr/bin/cc
+[0.422s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.424s] -- Detecting C compiler ABI info
+[0.550s] -- Detecting C compiler ABI info - done
+[0.572s] -- Detecting C compile features
+[0.573s] -- Detecting C compile features - done
+[0.578s] -- Check for working CXX compiler: /usr/bin/c++
+[0.725s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.727s] -- Detecting CXX compiler ABI info
+[0.868s] -- Detecting CXX compiler ABI info - done
+[0.890s] -- Detecting CXX compile features
+[0.891s] -- Detecting CXX compile features - done
+[0.895s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.923s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.923s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.271s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[1.379s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.381s] -- Added test 'lint_cmake' to check CMake code style
+[1.383s] -- Added test 'xmllint' to check XML markup files
+[1.385s] -- Configuring done
+[1.388s] -- Generating done
+[1.389s] -- Build files have been written to: /home/sonia/orbslam3-tello-drone/build/tello_driver
+[1.393s] Invoked command in '/home/sonia/orbslam3-tello-drone/build/tello_driver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/sonia/orbslam3-tello-drone/src/tello_driver -DCMAKE_INSTALL_PREFIX=/home/sonia/orbslam3-tello-drone/install/tello_driver
+[1.397s] Invoking command in '/home/sonia/orbslam3-tello-drone/build/tello_driver': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/sonia/orbslam3-tello-drone/build/tello_driver -- -j8 -l8
+[1.446s] Invoked command in '/home/sonia/orbslam3-tello-drone/build/tello_driver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/sonia/orbslam3-tello-drone/build/tello_driver -- -j8 -l8
+[1.508s] Invoking command in '/home/sonia/orbslam3-tello-drone/build/tello_driver': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/sonia/orbslam3-tello-drone/build/tello_driver
+[1.522s] -- Install configuration: ""
+[1.523s] -- Installing: /home/sonia/orbslam3-tello-drone/install/tello_driver/share/ament_index/resource_index/package_run_dependencies/tello_driver
+[1.523s] -- Installing: /home/sonia/orbslam3-tello-drone/install/tello_driver/share/ament_index/resource_index/parent_prefix_path/tello_driver
+[1.524s] -- Installing: /home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/environment/ament_prefix_path.sh
+[1.524s] -- Installing: /home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/environment/ament_prefix_path.dsv
+[1.524s] -- Installing: /home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/environment/path.sh
+[1.525s] -- Installing: /home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/environment/path.dsv
+[1.525s] -- Installing: /home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/local_setup.bash
+[1.525s] -- Installing: /home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/local_setup.sh
+[1.525s] -- Installing: /home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/local_setup.zsh
+[1.525s] -- Installing: /home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/local_setup.dsv
+[1.526s] -- Installing: /home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/package.dsv
+[1.526s] -- Installing: /home/sonia/orbslam3-tello-drone/install/tello_driver/share/ament_index/resource_index/packages/tello_driver
+[1.526s] -- Installing: /home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/cmake/tello_driverConfig.cmake
+[1.527s] -- Installing: /home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/cmake/tello_driverConfig-version.cmake
+[1.527s] -- Installing: /home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/package.xml
+[1.531s] Invoked command in '/home/sonia/orbslam3-tello-drone/build/tello_driver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/sonia/orbslam3-tello-drone/build/tello_driver
