@@ -1,0 +1,18 @@
+CMake Error at CMakeLists.txt:40 (find_package):
+  By not providing "Findros2_shared.cmake" in CMAKE_MODULE_PATH this project
+  has asked CMake to find a package configuration file provided by
+  "ros2_shared", but CMake did not find one.
+
+  Could not find a package configuration file provided by "ros2_shared" with
+  any of the following names:
+
+    ros2_sharedConfig.cmake
+    ros2_shared-config.cmake
+
+  Add the installation prefix of "ros2_shared" to CMAKE_PREFIX_PATH or set
+  "ros2_shared_DIR" to a directory containing one of the above files.  If
+  "ros2_shared" provides a separate development package or SDK, be sure it
+  has been installed.
+
+
+make: *** [Makefile:222: cmake_check_build_system] Error 1

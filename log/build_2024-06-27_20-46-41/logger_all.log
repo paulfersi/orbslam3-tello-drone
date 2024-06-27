@@ -1,0 +1,183 @@
+[0.370s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.370s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fa049b712b0>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=8, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fa049b712b0>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fa049a7a040>)
+[0.665s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.665s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.665s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.665s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.665s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.665s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.665s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/sonia/orbslam3-tello-drone'
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.687s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.687s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/tello_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/tello_driver) by extension 'ignore'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/tello_driver) by extension 'ignore_ament_install'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/tello_driver) by extensions ['colcon_pkg']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/tello_driver) by extension 'colcon_pkg'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/tello_driver) by extensions ['colcon_meta']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/tello_driver) by extension 'colcon_meta'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/tello_driver) by extensions ['ros']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/tello_driver) by extension 'ros'
+[0.697s] DEBUG:colcon.colcon_core.package_identification:Package 'src/tello_driver' with type 'ros.ament_cmake' and name 'tello_driver'
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(tello_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(tello_msgs) by extension 'ignore'
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(tello_msgs) by extension 'ignore_ament_install'
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(tello_msgs) by extensions ['colcon_pkg']
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(tello_msgs) by extension 'colcon_pkg'
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(tello_msgs) by extensions ['colcon_meta']
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(tello_msgs) by extension 'colcon_meta'
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(tello_msgs) by extensions ['ros']
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(tello_msgs) by extension 'ros'
+[0.699s] DEBUG:colcon.colcon_core.package_identification:Package 'tello_msgs' with type 'ros.ament_cmake' and name 'tello_msgs'
+[0.699s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.699s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.699s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.699s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.699s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.728s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.728s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.732s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 272 installed packages in /opt/ros/foxy
+[0.735s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.870s] Level 5:colcon.colcon_core.verb:set package 'tello_msgs' build argument 'cmake_args' from command line to 'None'
+[0.870s] Level 5:colcon.colcon_core.verb:set package 'tello_msgs' build argument 'cmake_target' from command line to 'None'
+[0.870s] Level 5:colcon.colcon_core.verb:set package 'tello_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.870s] Level 5:colcon.colcon_core.verb:set package 'tello_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.870s] Level 5:colcon.colcon_core.verb:set package 'tello_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.870s] Level 5:colcon.colcon_core.verb:set package 'tello_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.870s] Level 5:colcon.colcon_core.verb:set package 'tello_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.870s] Level 5:colcon.colcon_core.verb:set package 'tello_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.870s] Level 5:colcon.colcon_core.verb:set package 'tello_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.870s] DEBUG:colcon.colcon_core.verb:Building package 'tello_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sonia/orbslam3-tello-drone/build/tello_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sonia/orbslam3-tello-drone/install/tello_msgs', 'merge_install': False, 'path': '/home/sonia/orbslam3-tello-drone/tello_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.871s] Level 5:colcon.colcon_core.verb:set package 'tello_driver' build argument 'cmake_args' from command line to 'None'
+[0.871s] Level 5:colcon.colcon_core.verb:set package 'tello_driver' build argument 'cmake_target' from command line to 'None'
+[0.871s] Level 5:colcon.colcon_core.verb:set package 'tello_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.871s] Level 5:colcon.colcon_core.verb:set package 'tello_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[0.871s] Level 5:colcon.colcon_core.verb:set package 'tello_driver' build argument 'cmake_clean_first' from command line to 'False'
+[0.871s] Level 5:colcon.colcon_core.verb:set package 'tello_driver' build argument 'cmake_force_configure' from command line to 'False'
+[0.871s] Level 5:colcon.colcon_core.verb:set package 'tello_driver' build argument 'ament_cmake_args' from command line to 'None'
+[0.871s] Level 5:colcon.colcon_core.verb:set package 'tello_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[0.872s] Level 5:colcon.colcon_core.verb:set package 'tello_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.872s] DEBUG:colcon.colcon_core.verb:Building package 'tello_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sonia/orbslam3-tello-drone/build/tello_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sonia/orbslam3-tello-drone/install/tello_driver', 'merge_install': False, 'path': '/home/sonia/orbslam3-tello-drone/src/tello_driver', 'symlink_install': False, 'test_result_base': None}
+[0.872s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.873s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.874s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/sonia/orbslam3-tello-drone/tello_msgs' with build type 'ament_cmake'
+[0.874s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/sonia/orbslam3-tello-drone/tello_msgs'
+[0.877s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.878s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.878s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.896s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sonia/orbslam3-tello-drone/build/tello_msgs': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/sonia/orbslam3-tello-drone/tello_msgs -DCMAKE_INSTALL_PREFIX=/home/sonia/orbslam3-tello-drone/install/tello_msgs
+[2.203s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sonia/orbslam3-tello-drone/build/tello_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/sonia/orbslam3-tello-drone/tello_msgs -DCMAKE_INSTALL_PREFIX=/home/sonia/orbslam3-tello-drone/install/tello_msgs
+[2.208s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sonia/orbslam3-tello-drone/build/tello_msgs': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/sonia/orbslam3-tello-drone/build/tello_msgs -- -j8 -l8
+[2.262s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sonia/orbslam3-tello-drone/build/tello_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/sonia/orbslam3-tello-drone/build/tello_msgs -- -j8 -l8
+[2.324s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sonia/orbslam3-tello-drone/build/tello_msgs': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/sonia/orbslam3-tello-drone/build/tello_msgs
+[2.346s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(tello_msgs)
+[2.347s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sonia/orbslam3-tello-drone/build/tello_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/sonia/orbslam3-tello-drone/build/tello_msgs
+[2.352s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_msgs' for CMake module files
+[2.353s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_msgs' for CMake config files
+[2.353s] Level 1:colcon.colcon_core.shell:create_environment_hook('tello_msgs', 'cmake_prefix_path')
+[2.353s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/hook/cmake_prefix_path.ps1'
+[2.355s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/hook/cmake_prefix_path.dsv'
+[2.355s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/hook/cmake_prefix_path.sh'
+[2.357s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_msgs/bin'
+[2.357s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_msgs/lib/pkgconfig/tello_msgs.pc'
+[2.358s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_msgs/lib/python3.8/site-packages'
+[2.358s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_msgs/bin'
+[2.358s] INFO:colcon.colcon_core.shell:Creating package script '/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/package.ps1'
+[2.360s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/package.dsv'
+[2.360s] INFO:colcon.colcon_core.shell:Creating package script '/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/package.sh'
+[2.362s] INFO:colcon.colcon_core.shell:Creating package script '/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/package.bash'
+[2.363s] INFO:colcon.colcon_core.shell:Creating package script '/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/package.zsh'
+[2.364s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/colcon-core/packages/tello_msgs)
+[2.404s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(tello_msgs)
+[2.405s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_msgs' for CMake module files
+[2.406s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_msgs' for CMake config files
+[2.406s] Level 1:colcon.colcon_core.shell:create_environment_hook('tello_msgs', 'cmake_prefix_path')
+[2.407s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/hook/cmake_prefix_path.ps1'
+[2.408s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/hook/cmake_prefix_path.dsv'
+[2.408s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/hook/cmake_prefix_path.sh'
+[2.409s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_msgs/bin'
+[2.409s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_msgs/lib/pkgconfig/tello_msgs.pc'
+[2.410s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_msgs/lib/python3.8/site-packages'
+[2.410s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_msgs/bin'
+[2.411s] INFO:colcon.colcon_core.shell:Creating package script '/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/package.ps1'
+[2.411s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/package.dsv'
+[2.412s] INFO:colcon.colcon_core.shell:Creating package script '/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/package.sh'
+[2.413s] INFO:colcon.colcon_core.shell:Creating package script '/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/package.bash'
+[2.414s] INFO:colcon.colcon_core.shell:Creating package script '/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/package.zsh'
+[2.414s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/colcon-core/packages/tello_msgs)
+[2.415s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/sonia/orbslam3-tello-drone/src/tello_driver' with build type 'ament_cmake'
+[2.415s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/sonia/orbslam3-tello-drone/src/tello_driver'
+[2.416s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.416s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.437s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sonia/orbslam3-tello-drone/build/tello_driver': AMENT_PREFIX_PATH=/home/sonia/orbslam3-tello-drone/install/tello_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sonia/orbslam3-tello-drone/install/tello_msgs:/opt/ros/foxy /usr/bin/cmake --build /home/sonia/orbslam3-tello-drone/build/tello_driver -- -j8 -l8
+[7.055s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sonia/orbslam3-tello-drone/build/tello_driver' returned '2': AMENT_PREFIX_PATH=/home/sonia/orbslam3-tello-drone/install/tello_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sonia/orbslam3-tello-drone/install/tello_msgs:/opt/ros/foxy /usr/bin/cmake --build /home/sonia/orbslam3-tello-drone/build/tello_driver -- -j8 -l8
+[7.095s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(tello_driver)
+[7.095s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_driver' for CMake module files
+[7.096s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_driver' for CMake config files
+[7.096s] Level 1:colcon.colcon_core.shell:create_environment_hook('tello_driver', 'cmake_prefix_path')
+[7.097s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/hook/cmake_prefix_path.ps1'
+[7.098s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/hook/cmake_prefix_path.dsv'
+[7.099s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/hook/cmake_prefix_path.sh'
+[7.100s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_driver/bin'
+[7.100s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_driver/lib/pkgconfig/tello_driver.pc'
+[7.101s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_driver/lib/python3.8/site-packages'
+[7.101s] Level 1:colcon.colcon_core.environment:checking '/home/sonia/orbslam3-tello-drone/install/tello_driver/bin'
+[7.101s] INFO:colcon.colcon_core.shell:Creating package script '/home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/package.ps1'
+[7.102s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/package.dsv'
+[7.103s] INFO:colcon.colcon_core.shell:Creating package script '/home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/package.sh'
+[7.104s] INFO:colcon.colcon_core.shell:Creating package script '/home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/package.bash'
+[7.104s] INFO:colcon.colcon_core.shell:Creating package script '/home/sonia/orbslam3-tello-drone/install/tello_driver/share/tello_driver/package.zsh'
+[7.105s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sonia/orbslam3-tello-drone/install/tello_driver/share/colcon-core/packages/tello_driver)
+[7.116s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[7.117s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[7.117s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[7.117s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[7.126s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[7.126s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[7.126s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[7.144s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[7.144s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sonia/orbslam3-tello-drone/install/local_setup.ps1'
+[7.145s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/sonia/orbslam3-tello-drone/install/_local_setup_util_ps1.py'
+[7.147s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sonia/orbslam3-tello-drone/install/setup.ps1'
+[7.148s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sonia/orbslam3-tello-drone/install/local_setup.sh'
+[7.149s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/sonia/orbslam3-tello-drone/install/_local_setup_util_sh.py'
+[7.149s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sonia/orbslam3-tello-drone/install/setup.sh'
+[7.150s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sonia/orbslam3-tello-drone/install/local_setup.bash'
+[7.151s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sonia/orbslam3-tello-drone/install/setup.bash'
+[7.152s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sonia/orbslam3-tello-drone/install/local_setup.zsh'
+[7.153s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sonia/orbslam3-tello-drone/install/setup.zsh'

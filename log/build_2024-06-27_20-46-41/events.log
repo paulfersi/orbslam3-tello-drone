@@ -1,0 +1,168 @@
+[0.000000] (-) TimerEvent: {}
+[0.000197] (tello_msgs) JobQueued: {'identifier': 'tello_msgs', 'dependencies': OrderedDict()}
+[0.000418] (tello_driver) JobQueued: {'identifier': 'tello_driver', 'dependencies': OrderedDict([('tello_msgs', '/home/sonia/orbslam3-tello-drone/install/tello_msgs')])}
+[0.000468] (tello_msgs) JobStarted: {'identifier': 'tello_msgs'}
+[0.015806] (tello_msgs) JobProgress: {'identifier': 'tello_msgs', 'progress': 'cmake'}
+[0.016718] (tello_msgs) Command: {'cmd': ['/usr/bin/cmake', '/home/sonia/orbslam3-tello-drone/tello_msgs', '-DCMAKE_INSTALL_PREFIX=/home/sonia/orbslam3-tello-drone/install/tello_msgs'], 'cwd': '/home/sonia/orbslam3-tello-drone/build/tello_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'sonia'), ('LC_TIME', 'fr_FR.UTF-8'), ('SSH_AGENT_PID', '16059'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/home/sonia'), ('OLDPWD', '/home/sonia/orbslam3-tello-drone/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('TKDNN_MODE', 'FP16'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('MANAGERPID', '15175'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu.mandatory.path'), ('IM_CONFIG_PHASE', '1'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'sonia'), ('JOURNAL_STREAM', '8:64613'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu.default.path'), ('USERNAME', 'sonia'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/foxy/bin:/home/sonia/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/sonia-Lenovo:@/tmp/.ICE-unix/16343,unix/sonia-Lenovo:/tmp/.ICE-unix/16343'), ('INVOCATION_ID', '9c10fabdc7004d52a55bec78f0aa0ef8'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/acde519d_559e_4a97_a40f_31e44cf1d627'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.119'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/sonia/orbslam3-tello-drone/build/tello_msgs'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('TKDNN_BATCHSIZE', '2'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[0.098910] (-) TimerEvent: {}
+[0.109537] (tello_msgs) StdoutLine: {'line': b'-- The C compiler identification is GNU 9.4.0\n'}
+[0.169618] (tello_msgs) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 9.4.0\n'}
+[0.173942] (tello_msgs) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc\n'}
+[0.198997] (-) TimerEvent: {}
+[0.299321] (-) TimerEvent: {}
+[0.311137] (tello_msgs) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc -- works\n'}
+[0.312899] (tello_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.399467] (-) TimerEvent: {}
+[0.439410] (tello_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.461379] (tello_msgs) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.462031] (tello_msgs) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.466542] (tello_msgs) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++\n'}
+[0.499619] (-) TimerEvent: {}
+[0.600011] (-) TimerEvent: {}
+[0.613441] (tello_msgs) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ -- works\n'}
+[0.615529] (tello_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.700179] (-) TimerEvent: {}
+[0.763002] (tello_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.775524] (tello_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.776062] (tello_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.778265] (tello_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[0.800297] (-) TimerEvent: {}
+[0.803838] (tello_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[0.804111] (tello_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.900452] (-) TimerEvent: {}
+[1.000812] (-) TimerEvent: {}
+[1.101166] (-) TimerEvent: {}
+[1.174409] (tello_msgs) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)\n'}
+[1.201309] (-) TimerEvent: {}
+[1.301661] (-) TimerEvent: {}
+[1.308059] (tello_msgs) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[1.311453] (tello_msgs) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.313419] (tello_msgs) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.317188] (tello_msgs) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.320717] (tello_msgs) StdoutLine: {'line': b'-- Generating done\n'}
+[1.322278] (tello_msgs) StdoutLine: {'line': b'-- Build files have been written to: /home/sonia/orbslam3-tello-drone/build/tello_msgs\n'}
+[1.327958] (tello_msgs) CommandEnded: {'returncode': 0}
+[1.329244] (tello_msgs) JobProgress: {'identifier': 'tello_msgs', 'progress': 'build'}
+[1.332730] (tello_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/sonia/orbslam3-tello-drone/build/tello_msgs', '--', '-j8', '-l8'], 'cwd': '/home/sonia/orbslam3-tello-drone/build/tello_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'sonia'), ('LC_TIME', 'fr_FR.UTF-8'), ('SSH_AGENT_PID', '16059'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/home/sonia'), ('OLDPWD', '/home/sonia/orbslam3-tello-drone/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('TKDNN_MODE', 'FP16'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('MANAGERPID', '15175'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu.mandatory.path'), ('IM_CONFIG_PHASE', '1'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'sonia'), ('JOURNAL_STREAM', '8:64613'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu.default.path'), ('USERNAME', 'sonia'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/foxy/bin:/home/sonia/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/sonia-Lenovo:@/tmp/.ICE-unix/16343,unix/sonia-Lenovo:/tmp/.ICE-unix/16343'), ('INVOCATION_ID', '9c10fabdc7004d52a55bec78f0aa0ef8'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/acde519d_559e_4a97_a40f_31e44cf1d627'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.119'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/sonia/orbslam3-tello-drone/build/tello_msgs'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('TKDNN_BATCHSIZE', '2'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[1.387947] (tello_msgs) CommandEnded: {'returncode': 0}
+[1.401887] (-) TimerEvent: {}
+[1.425780] (tello_msgs) JobProgress: {'identifier': 'tello_msgs', 'progress': 'install'}
+[1.448620] (tello_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/sonia/orbslam3-tello-drone/build/tello_msgs'], 'cwd': '/home/sonia/orbslam3-tello-drone/build/tello_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'sonia'), ('LC_TIME', 'fr_FR.UTF-8'), ('SSH_AGENT_PID', '16059'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/home/sonia'), ('OLDPWD', '/home/sonia/orbslam3-tello-drone/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('TKDNN_MODE', 'FP16'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('MANAGERPID', '15175'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu.mandatory.path'), ('IM_CONFIG_PHASE', '1'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'sonia'), ('JOURNAL_STREAM', '8:64613'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu.default.path'), ('USERNAME', 'sonia'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/foxy/bin:/home/sonia/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/sonia-Lenovo:@/tmp/.ICE-unix/16343,unix/sonia-Lenovo:/tmp/.ICE-unix/16343'), ('INVOCATION_ID', '9c10fabdc7004d52a55bec78f0aa0ef8'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/acde519d_559e_4a97_a40f_31e44cf1d627'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.119'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/sonia/orbslam3-tello-drone/build/tello_msgs'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('TKDNN_BATCHSIZE', '2'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[1.464667] (tello_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.465098] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/sonia/orbslam3-tello-drone/install/tello_msgs/share/ament_index/resource_index/package_run_dependencies/tello_msgs\n'}
+[1.465443] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/sonia/orbslam3-tello-drone/install/tello_msgs/share/ament_index/resource_index/parent_prefix_path/tello_msgs\n'}
+[1.465830] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/environment/ament_prefix_path.sh\n'}
+[1.466194] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/environment/ament_prefix_path.dsv\n'}
+[1.466499] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/environment/path.sh\n'}
+[1.466734] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/environment/path.dsv\n'}
+[1.467056] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/local_setup.bash\n'}
+[1.467247] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/local_setup.sh\n'}
+[1.467506] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/local_setup.zsh\n'}
+[1.467760] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/local_setup.dsv\n'}
+[1.468071] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/package.dsv\n'}
+[1.468327] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/sonia/orbslam3-tello-drone/install/tello_msgs/share/ament_index/resource_index/packages/tello_msgs\n'}
+[1.468686] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/cmake/tello_msgsConfig.cmake\n'}
+[1.469004] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/cmake/tello_msgsConfig-version.cmake\n'}
+[1.469334] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/package.xml\n'}
+[1.472797] (tello_msgs) CommandEnded: {'returncode': 0}
+[1.502077] (-) TimerEvent: {}
+[1.542789] (tello_msgs) JobEnded: {'identifier': 'tello_msgs', 'rc': 0}
+[1.543473] (tello_driver) JobStarted: {'identifier': 'tello_driver'}
+[1.554842] (tello_driver) JobProgress: {'identifier': 'tello_driver', 'progress': 'cmake'}
+[1.556161] (tello_driver) JobProgress: {'identifier': 'tello_driver', 'progress': 'build'}
+[1.558599] (tello_driver) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/sonia/orbslam3-tello-drone/build/tello_driver', '--', '-j8', '-l8'], 'cwd': '/home/sonia/orbslam3-tello-drone/build/tello_driver', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'sonia'), ('LC_TIME', 'fr_FR.UTF-8'), ('SSH_AGENT_PID', '16059'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/home/sonia'), ('OLDPWD', '/home/sonia/orbslam3-tello-drone/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('TKDNN_MODE', 'FP16'), ('LC_MONETARY', 'fr_FR.UTF-8'), ('MANAGERPID', '15175'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu.mandatory.path'), ('IM_CONFIG_PHASE', '1'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'sonia'), ('JOURNAL_STREAM', '8:64613'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu.default.path'), ('USERNAME', 'sonia'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/foxy/bin:/home/sonia/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/sonia-Lenovo:@/tmp/.ICE-unix/16343,unix/sonia-Lenovo:/tmp/.ICE-unix/16343'), ('INVOCATION_ID', '9c10fabdc7004d52a55bec78f0aa0ef8'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fr_FR.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/acde519d_559e_4a97_a40f_31e44cf1d627'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fr_FR.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.119'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/sonia/orbslam3-tello-drone/install/tello_msgs:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fr_FR.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fr_FR.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'fr_FR.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/sonia/orbslam3-tello-drone/build/tello_driver'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('TKDNN_BATCHSIZE', '2'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('LC_NUMERIC', 'fr_FR.UTF-8'), ('LC_PAPER', 'fr_FR.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/sonia/orbslam3-tello-drone/install/tello_msgs:/opt/ros/foxy')]), 'shell': False}
+[1.602180] (-) TimerEvent: {}
+[1.605774] (tello_driver) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[1.636901] (tello_driver) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.702317] (-) TimerEvent: {}
+[1.802678] (-) TimerEvent: {}
+[1.903072] (-) TimerEvent: {}
+[2.003413] (-) TimerEvent: {}
+[2.005896] (tello_driver) StdoutLine: {'line': b'-- Found camera_calibration_parsers: 2.4.0 (/opt/ros/foxy/share/camera_calibration_parsers/cmake)\n'}
+[2.103655] (-) TimerEvent: {}
+[2.204369] (-) TimerEvent: {}
+[2.305496] (-) TimerEvent: {}
+[2.406220] (-) TimerEvent: {}
+[2.436935] (tello_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.506514] (-) TimerEvent: {}
+[2.534182] (tello_driver) StdoutLine: {'line': b'-- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)\n'}
+[2.606807] (-) TimerEvent: {}
+[2.707585] (-) TimerEvent: {}
+[2.808598] (-) TimerEvent: {}
+[2.909685] (-) TimerEvent: {}
+[3.010577] (-) TimerEvent: {}
+[3.111477] (-) TimerEvent: {}
+[3.212133] (-) TimerEvent: {}
+[3.289095] (tello_driver) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  \n'}
+[3.312370] (-) TimerEvent: {}
+[3.392708] (tello_driver) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/foxy/include  \n'}
+[3.412517] (-) TimerEvent: {}
+[3.512957] (-) TimerEvent: {}
+[3.613778] (-) TimerEvent: {}
+[3.622619] (tello_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[3.713981] (-) TimerEvent: {}
+[3.814444] (-) TimerEvent: {}
+[3.887087] (tello_driver) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)\n'}
+[3.892247] (tello_driver) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[3.914608] (-) TimerEvent: {}
+[3.946739] (tello_driver) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[4.014789] (-) TimerEvent: {}
+[4.115391] (-) TimerEvent: {}
+[4.216067] (-) TimerEvent: {}
+[4.316712] (-) TimerEvent: {}
+[4.387523] (tello_driver) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[4.388036] (tello_driver) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[4.416852] (-) TimerEvent: {}
+[4.517173] (-) TimerEvent: {}
+[4.561042] (tello_driver) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed\n'}
+[4.561419] (tello_driver) StdoutLine: {'line': b'-- Looking for pthread_create in pthreads\n'}
+[4.617772] (-) TimerEvent: {}
+[4.718262] (-) TimerEvent: {}
+[4.730120] (tello_driver) StdoutLine: {'line': b'-- Looking for pthread_create in pthreads - not found\n'}
+[4.730532] (tello_driver) StdoutLine: {'line': b'-- Looking for pthread_create in pthread\n'}
+[4.818422] (-) TimerEvent: {}
+[4.861711] (tello_driver) StdoutLine: {'line': b'-- Looking for pthread_create in pthread - found\n'}
+[4.863902] (tello_driver) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[4.918658] (-) TimerEvent: {}
+[5.019299] (-) TimerEvent: {}
+[5.119651] (-) TimerEvent: {}
+[5.220018] (-) TimerEvent: {}
+[5.320364] (-) TimerEvent: {}
+[5.420730] (-) TimerEvent: {}
+[5.521114] (-) TimerEvent: {}
+[5.621960] (-) TimerEvent: {}
+[5.675821] (tello_driver) StdoutLine: {'line': b"-- Setting yaml-cpp_DIR to: '/opt/ros/foxy/share/yaml_cpp_vendor/cmake/../../../opt/yaml_cpp_vendor/lib/cmake/yaml-cpp'\n"}
+[5.696152] (tello_driver) StdoutLine: {'line': b'-- Found class_loader: 2.0.3 (/opt/ros/foxy/share/class_loader/cmake)\n'}
+[5.722251] (-) TimerEvent: {}
+[5.817236] (tello_driver) StdoutLine: {'line': b'-- Found cv_bridge: 3.0.7 (/opt/ros/foxy/share/cv_bridge/cmake)\n'}
+[5.822931] (-) TimerEvent: {}
+[5.923629] (-) TimerEvent: {}
+[5.980257] (tello_driver) StdoutLine: {'line': b'-- Found OpenCV: /usr (found version "4.2.0") \n'}
+[6.004815] (tello_driver) StdoutLine: {'line': b'-- Found rclcpp_components: 2.4.3 (/opt/ros/foxy/share/rclcpp_components/cmake)\n'}
+[6.023786] (-) TimerEvent: {}
+[6.124148] (-) TimerEvent: {}
+[6.162499] (tello_driver) StderrLine: {'line': b'CMake Error at CMakeLists.txt:40 (find_package):\n'}
+[6.162812] (tello_driver) StderrLine: {'line': b'  By not providing "Findros2_shared.cmake" in CMAKE_MODULE_PATH this project\n'}
+[6.162964] (tello_driver) StderrLine: {'line': b'  has asked CMake to find a package configuration file provided by\n'}
+[6.163093] (tello_driver) StderrLine: {'line': b'  "ros2_shared", but CMake did not find one.\n'}
+[6.163214] (tello_driver) StderrLine: {'line': b'\n'}
+[6.163333] (tello_driver) StderrLine: {'line': b'  Could not find a package configuration file provided by "ros2_shared" with\n'}
+[6.163452] (tello_driver) StderrLine: {'line': b'  any of the following names:\n'}
+[6.163570] (tello_driver) StderrLine: {'line': b'\n'}
+[6.163688] (tello_driver) StderrLine: {'line': b'    ros2_sharedConfig.cmake\n'}
+[6.163806] (tello_driver) StderrLine: {'line': b'    ros2_shared-config.cmake\n'}
+[6.163923] (tello_driver) StderrLine: {'line': b'\n'}
+[6.164040] (tello_driver) StderrLine: {'line': b'  Add the installation prefix of "ros2_shared" to CMAKE_PREFIX_PATH or set\n'}
+[6.164156] (tello_driver) StderrLine: {'line': b'  "ros2_shared_DIR" to a directory containing one of the above files.  If\n'}
+[6.164274] (tello_driver) StderrLine: {'line': b'  "ros2_shared" provides a separate development package or SDK, be sure it\n'}
+[6.164390] (tello_driver) StderrLine: {'line': b'  has been installed.\n'}
+[6.164504] (tello_driver) StderrLine: {'line': b'\n'}
+[6.164618] (tello_driver) StderrLine: {'line': b'\n'}
+[6.166151] (tello_driver) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[6.166342] (tello_driver) StdoutLine: {'line': b'See also "/home/sonia/orbslam3-tello-drone/build/tello_driver/CMakeFiles/CMakeOutput.log".\n'}
+[6.166477] (tello_driver) StdoutLine: {'line': b'See also "/home/sonia/orbslam3-tello-drone/build/tello_driver/CMakeFiles/CMakeError.log".\n'}
+[6.176705] (tello_driver) StderrLine: {'line': b'make: *** [Makefile:222: cmake_check_build_system] Error 1\n'}
+[6.180159] (tello_driver) CommandEnded: {'returncode': 2}
+[6.224380] (-) TimerEvent: {}
+[6.231794] (tello_driver) JobEnded: {'identifier': 'tello_driver', 'rc': 2}
+[6.243346] (-) EventReactorShutdown: {}

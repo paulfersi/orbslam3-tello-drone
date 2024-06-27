@@ -1,0 +1,115 @@
+[0.020s] Invoking command in '/home/sonia/orbslam3-tello-drone/src/build/tello_driver': AMENT_PREFIX_PATH=/home/sonia/orbslam3-tello-drone/src/install/tello_msgs:/home/sonia/orbslam3-tello-drone/src/install/ros2_shared:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sonia/orbslam3-tello-drone/src/install/tello_msgs:/home/sonia/orbslam3-tello-drone/src/install/ros2_shared:/opt/ros/foxy LD_LIBRARY_PATH=/home/sonia/orbslam3-tello-drone/src/install/tello_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/sonia/orbslam3-tello-drone/src/install/tello_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake /home/sonia/orbslam3-tello-drone/src/tello_driver -DCMAKE_INSTALL_PREFIX=/home/sonia/orbslam3-tello-drone/src/install/tello_driver
+[0.126s] -- The C compiler identification is GNU 9.4.0
+[0.230s] -- The CXX compiler identification is GNU 9.4.0
+[0.238s] -- Check for working C compiler: /usr/bin/cc
+[0.371s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.373s] -- Detecting C compiler ABI info
+[0.487s] -- Detecting C compiler ABI info - done
+[0.506s] -- Detecting C compile features
+[0.506s] -- Detecting C compile features - done
+[0.510s] -- Check for working CXX compiler: /usr/bin/c++
+[0.683s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.684s] -- Detecting CXX compiler ABI info
+[0.881s] -- Detecting CXX compiler ABI info - done
+[0.894s] -- Detecting CXX compile features
+[0.895s] -- Detecting CXX compile features - done
+[0.898s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.927s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.927s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.299s] -- Found camera_calibration_parsers: 2.4.0 (/opt/ros/foxy/share/camera_calibration_parsers/cmake)
+[1.348s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.354s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[1.436s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[1.468s] -- Found FastRTPS: /opt/ros/foxy/include  
+[1.545s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.600s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[1.602s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.603s] -- Looking for pthread.h
+[1.698s] -- Looking for pthread.h - found
+[1.699s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.790s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[1.790s] -- Looking for pthread_create in pthreads
+[1.869s] -- Looking for pthread_create in pthreads - not found
+[1.870s] -- Looking for pthread_create in pthread
+[2.002s] -- Looking for pthread_create in pthread - found
+[2.004s] -- Found Threads: TRUE  
+[2.587s] -- Setting yaml-cpp_DIR to: '/opt/ros/foxy/share/yaml_cpp_vendor/cmake/../../../opt/yaml_cpp_vendor/lib/cmake/yaml-cpp'
+[2.597s] -- Found class_loader: 2.0.3 (/opt/ros/foxy/share/class_loader/cmake)
+[2.608s] -- Found cv_bridge: 3.0.7 (/opt/ros/foxy/share/cv_bridge/cmake)
+[2.673s] -- Found OpenCV: /usr (found version "4.2.0") 
+[2.676s] -- Found rclcpp_components: 2.4.3 (/opt/ros/foxy/share/rclcpp_components/cmake)
+[2.785s] -- Found ros2_shared: 0.1.0 (/home/sonia/orbslam3-tello-drone/src/install/ros2_shared/share/ros2_shared/cmake)
+[2.792s] -- Found tello_msgs: 0.1.0 (/home/sonia/orbslam3-tello-drone/src/install/tello_msgs/share/tello_msgs/cmake)
+[3.250s] -- Configuring done
+[4.373s] -- Generating done
+[4.376s] -- Build files have been written to: /home/sonia/orbslam3-tello-drone/src/build/tello_driver
+[4.392s] Invoked command in '/home/sonia/orbslam3-tello-drone/src/build/tello_driver' returned '0': AMENT_PREFIX_PATH=/home/sonia/orbslam3-tello-drone/src/install/tello_msgs:/home/sonia/orbslam3-tello-drone/src/install/ros2_shared:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sonia/orbslam3-tello-drone/src/install/tello_msgs:/home/sonia/orbslam3-tello-drone/src/install/ros2_shared:/opt/ros/foxy LD_LIBRARY_PATH=/home/sonia/orbslam3-tello-drone/src/install/tello_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/sonia/orbslam3-tello-drone/src/install/tello_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake /home/sonia/orbslam3-tello-drone/src/tello_driver -DCMAKE_INSTALL_PREFIX=/home/sonia/orbslam3-tello-drone/src/install/tello_driver
+[4.397s] Invoking command in '/home/sonia/orbslam3-tello-drone/src/build/tello_driver': AMENT_PREFIX_PATH=/home/sonia/orbslam3-tello-drone/src/install/tello_msgs:/home/sonia/orbslam3-tello-drone/src/install/ros2_shared:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sonia/orbslam3-tello-drone/src/install/tello_msgs:/home/sonia/orbslam3-tello-drone/src/install/ros2_shared:/opt/ros/foxy LD_LIBRARY_PATH=/home/sonia/orbslam3-tello-drone/src/install/tello_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/sonia/orbslam3-tello-drone/src/install/tello_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/sonia/orbslam3-tello-drone/src/build/tello_driver -- -j8 -l8
+[4.464s] [35m[1mScanning dependencies of target tello_emulator[0m
+[4.465s] [35m[1mScanning dependencies of target tello_joy_main[0m
+[4.465s] [35m[1mScanning dependencies of target tello_driver_node[0m
+[4.471s] [35m[1mScanning dependencies of target tello_driver_main[0m
+[4.472s] [35m[1mScanning dependencies of target tello_joy_node[0m
+[4.485s] [  4%] [32mBuilding CXX object CMakeFiles/tello_emulator.dir/src/tello_emulator.cpp.o[0m
+[4.793s] [01m[K/home/sonia/orbslam3-tello-drone/src/tello_driver/src/tello_emulator.cpp:5:10:[m[K [01;31m[Kfatal error: [m[Kasio.hpp: No such file or directory
+[4.793s]     5 | #include [01;31m[K<asio.hpp>[m[K
+[4.794s]       |          [01;31m[K^~~~~~~~~~[m[K
+[4.794s] compilation terminated.
+[4.799s] make[2]: *** [CMakeFiles/tello_emulator.dir/build.make:63: CMakeFiles/tello_emulator.dir/src/tello_emulator.cpp.o] Error 1
+[4.800s] make[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/tello_emulator.dir/all] Error 2
+[4.800s] make[1]: *** Waiting for unfinished jobs....
+[5.832s] [  9%] [32mBuilding CXX object CMakeFiles/tello_joy_node.dir/src/tello_joy_node.cpp.o[0m
+[5.832s] [ 18%] [32mBuilding CXX object CMakeFiles/tello_joy_main.dir/src/tello_joy_main.cpp.o[0m
+[5.832s] [ 18%] [32mBuilding CXX object CMakeFiles/tello_joy_main.dir/src/tello_joy_node.cpp.o[0m
+[6.625s] [ 22%] [32mBuilding CXX object CMakeFiles/tello_driver_node.dir/src/tello_driver_node.cpp.o[0m
+[6.625s] [ 27%] [32mBuilding CXX object CMakeFiles/tello_driver_node.dir/src/state_socket.cpp.o[0m
+[6.625s] [ 31%] [32mBuilding CXX object CMakeFiles/tello_driver_node.dir/src/tello_socket.cpp.o[0m
+[6.626s] [ 36%] [32mBuilding CXX object CMakeFiles/tello_driver_main.dir/src/tello_driver_main.cpp.o[0m
+[6.635s] [ 40%] [32mBuilding CXX object CMakeFiles/tello_driver_node.dir/src/command_socket.cpp.o[0m
+[6.638s] In file included from [01m[K/home/sonia/orbslam3-tello-drone/src/tello_driver/src/state_socket.cpp:1[m[K:
+[6.638s] [01m[K/home/sonia/orbslam3-tello-drone/src/tello_driver/include/tello_driver_node.hpp:1:10:[m[K [01;31m[Kfatal error: [m[Kasio.hpp: No such file or directory
+[6.638s]     1 | #include [01;31m[K<asio.hpp>[m[K
+[6.638s]       |          [01;31m[K^~~~~~~~~~[m[K
+[6.639s] compilation terminated.
+[6.639s] In file included from [01m[K/home/sonia/orbslam3-tello-drone/src/tello_driver/src/tello_socket.cpp:1[m[K:
+[6.639s] [01m[K/home/sonia/orbslam3-tello-drone/src/tello_driver/include/tello_driver_node.hpp:1:10:[m[K [01;31m[Kfatal error: [m[Kasio.hpp: No such file or directory
+[6.639s]     1 | #include [01;31m[K<asio.hpp>[m[K
+[6.639s]       |          [01;31m[K^~~~~~~~~~[m[K
+[6.639s] compilation terminated.
+[6.640s] In file included from [01m[K/home/sonia/orbslam3-tello-drone/src/tello_driver/src/tello_driver_main.cpp:1[m[K:
+[6.640s] [01m[K/home/sonia/orbslam3-tello-drone/src/tello_driver/include/tello_driver_node.hpp:1:10:[m[K [01;31m[Kfatal error: [m[Kasio.hpp: No such file or directory
+[6.640s]     1 | #include [01;31m[K<asio.hpp>[m[K
+[6.640s]       |          [01;31m[K^~~~~~~~~~[m[K
+[6.640s] compilation terminated.
+[6.640s] make[2]: *** [CMakeFiles/tello_driver_node.dir/build.make:76: CMakeFiles/tello_driver_node.dir/src/tello_socket.cpp.o] Error 1
+[6.641s] make[2]: *** Waiting for unfinished jobs....
+[6.642s] make[2]: *** [CMakeFiles/tello_driver_main.dir/build.make:63: CMakeFiles/tello_driver_main.dir/src/tello_driver_main.cpp.o] Error 1
+[6.642s] make[2]: *** Waiting for unfinished jobs....
+[6.642s] make[2]: *** [CMakeFiles/tello_driver_node.dir/build.make:102: CMakeFiles/tello_driver_node.dir/src/state_socket.cpp.o] Error 1
+[6.648s] In file included from [01m[K/home/sonia/orbslam3-tello-drone/src/tello_driver/src/tello_driver_node.cpp:1[m[K:
+[6.648s] [01m[K/home/sonia/orbslam3-tello-drone/src/tello_driver/include/tello_driver_node.hpp:1:10:[m[K [01;31m[Kfatal error: [m[Kasio.hpp: No such file or directory
+[6.648s]     1 | #include [01;31m[K<asio.hpp>[m[K
+[6.648s]       |          [01;31m[K^~~~~~~~~~[m[K
+[6.648s] compilation terminated.
+[6.649s] In file included from [01m[K/home/sonia/orbslam3-tello-drone/src/tello_driver/src/command_socket.cpp:1[m[K:
+[6.649s] [01m[K/home/sonia/orbslam3-tello-drone/src/tello_driver/include/tello_driver_node.hpp:1:10:[m[K [01;31m[Kfatal error: [m[Kasio.hpp: No such file or directory
+[6.649s]     1 | #include [01;31m[K<asio.hpp>[m[K
+[6.649s]       |          [01;31m[K^~~~~~~~~~[m[K
+[6.649s] compilation terminated.
+[6.649s] make[2]: *** [CMakeFiles/tello_driver_node.dir/build.make:63: CMakeFiles/tello_driver_node.dir/src/tello_driver_node.cpp.o] Error 1
+[6.650s] make[2]: *** [CMakeFiles/tello_driver_node.dir/build.make:89: CMakeFiles/tello_driver_node.dir/src/command_socket.cpp.o] Error 1
+[6.650s] make[1]: *** [CMakeFiles/Makefile2:113: CMakeFiles/tello_driver_node.dir/all] Error 2
+[6.656s] [ 45%] [32mBuilding CXX object CMakeFiles/tello_driver_main.dir/src/tello_driver_node.cpp.o[0m
+[6.668s] In file included from [01m[K/home/sonia/orbslam3-tello-drone/src/tello_driver/src/tello_driver_node.cpp:1[m[K:
+[6.669s] [01m[K/home/sonia/orbslam3-tello-drone/src/tello_driver/include/tello_driver_node.hpp:1:10:[m[K [01;31m[Kfatal error: [m[Kasio.hpp: No such file or directory
+[6.669s]     1 | #include [01;31m[K<asio.hpp>[m[K
+[6.669s]       |          [01;31m[K^~~~~~~~~~[m[K
+[6.669s] compilation terminated.
+[6.670s] make[2]: *** [CMakeFiles/tello_driver_main.dir/build.make:76: CMakeFiles/tello_driver_main.dir/src/tello_driver_node.cpp.o] Error 1
+[6.670s] make[1]: *** [CMakeFiles/Makefile2:140: CMakeFiles/tello_driver_main.dir/all] Error 2
+[15.003s] [ 50%] [32m[1mLinking CXX executable tello_joy_main[0m
+[15.278s] [ 54%] [32m[1mLinking CXX shared library libtello_joy_node.so[0m
+[15.822s] [ 54%] Built target tello_joy_node
+[15.829s] [ 54%] Built target tello_joy_main
+[15.831s] make: *** [Makefile:141: all] Error 2
+[15.833s] Invoked command in '/home/sonia/orbslam3-tello-drone/src/build/tello_driver' returned '2': AMENT_PREFIX_PATH=/home/sonia/orbslam3-tello-drone/src/install/tello_msgs:/home/sonia/orbslam3-tello-drone/src/install/ros2_shared:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sonia/orbslam3-tello-drone/src/install/tello_msgs:/home/sonia/orbslam3-tello-drone/src/install/ros2_shared:/opt/ros/foxy LD_LIBRARY_PATH=/home/sonia/orbslam3-tello-drone/src/install/tello_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/sonia/orbslam3-tello-drone/src/install/tello_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/sonia/orbslam3-tello-drone/src/build/tello_driver -- -j8 -l8
