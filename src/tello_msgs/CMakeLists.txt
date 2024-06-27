@@ -1,35 +1,33 @@
 cmake_minimum_required(VERSION 3.5)
 project(tello_msgs)
 
-# Default to C99
-if(NOT CMAKE_C_STANDARD)
-  set(CMAKE_C_STANDARD 99)
-endif()
-
 # Default to C++14
-if(NOT CMAKE_CXX_STANDARD)
+if (NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 14)
-endif()
+endif ()
 
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
-endif()
+# Debugging: set _dump_all_variables to true
+set(_dump_all_variables false)
+if (_dump_all_variables)
+  get_cmake_property(_variable_names VARIABLES)
+  list(SORT _variable_names)
+  foreach (_variable_name ${_variable_names})
+    message(STATUS "${_variable_name}=${${_variable_name}}")
+  endforeach ()
+endif ()
 
-# find dependencies
+# Find packages
 find_package(ament_cmake REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+find_package(std_msgs REQUIRED)
 
-if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  # the following line skips the linter which checks for copyrights
-  # uncomment the line when a copyright and license is not present in all source files
-  #set(ament_cmake_copyright_FOUND TRUE)
-  # the following line skips cpplint (only works in a git repo)
-  # uncomment the line when this package is not in a git repo
-  #set(ament_cmake_cpplint_FOUND TRUE)
-  ament_lint_auto_find_test_dependencies()
-endif()
+# Generate ROS interfaces
+rosidl_generate_interfaces(
+  ${PROJECT_NAME}
+  "msg/FlightData.msg"
+  "msg/TelloResponse.msg"
+  "srv/TelloAction.srv"
+  DEPENDENCIES std_msgs
+)
 
 ament_package()

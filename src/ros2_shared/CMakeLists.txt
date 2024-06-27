@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.12)
 project(ros2_shared)
 
 # Default to C99
@@ -15,21 +15,29 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# find dependencies
+# Find packages
 find_package(ament_cmake REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
+find_package(rclcpp REQUIRED)
 
-if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  # the following line skips the linter which checks for copyrights
-  # uncomment the line when a copyright and license is not present in all source files
-  #set(ament_cmake_copyright_FOUND TRUE)
-  # the following line skips cpplint (only works in a git repo)
-  # uncomment the line when this package is not in a git repo
-  #set(ament_cmake_cpplint_FOUND TRUE)
-  ament_lint_auto_find_test_dependencies()
-endif()
+# Create a modern CMake target
+add_library(ros2_shared INTERFACE)
+add_library(ros2_shared::ros2_shared ALIAS ros2_shared)
+
+# ros2_shared depends on rclcpp
+target_link_libraries(ros2_shared
+  INTERFACE
+    rclcpp::rclcpp)
+
+# Install
+install(TARGETS ros2_shared
+  EXPORT ros2_shared_targets
+  INCLUDES DESTINATION include)
+
+install(DIRECTORY include/
+  DESTINATION include)
+
+# Export
+ament_export_targets(ros2_shared_targets)
+ament_export_dependencies(rclcpp)
 
 ament_package()
