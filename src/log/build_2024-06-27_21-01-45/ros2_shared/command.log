@@ -1,6 +1,0 @@
-Invoking command in '/home/sonia/orbslam3-tello-drone/src/build/ros2_shared': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/sonia/orbslam3-tello-drone/src/ros2_shared -DCMAKE_INSTALL_PREFIX=/home/sonia/orbslam3-tello-drone/src/install/ros2_shared
-Invoked command in '/home/sonia/orbslam3-tello-drone/src/build/ros2_shared' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/sonia/orbslam3-tello-drone/src/ros2_shared -DCMAKE_INSTALL_PREFIX=/home/sonia/orbslam3-tello-drone/src/install/ros2_shared
-Invoking command in '/home/sonia/orbslam3-tello-drone/src/build/ros2_shared': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/sonia/orbslam3-tello-drone/src/build/ros2_shared -- -j8 -l8
-Invoked command in '/home/sonia/orbslam3-tello-drone/src/build/ros2_shared' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/sonia/orbslam3-tello-drone/src/build/ros2_shared -- -j8 -l8
-Invoking command in '/home/sonia/orbslam3-tello-drone/src/build/ros2_shared': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/sonia/orbslam3-tello-drone/src/build/ros2_shared
-Invoked command in '/home/sonia/orbslam3-tello-drone/src/build/ros2_shared' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/sonia/orbslam3-tello-drone/src/build/ros2_shared
