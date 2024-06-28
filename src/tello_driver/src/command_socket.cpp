@@ -4,10 +4,9 @@ namespace tello_driver
 {
 
   CommandSocket::CommandSocket(TelloDriverNode *driver, std::string drone_ip,
-                               unsigned short drone_port, unsigned short command_port) :
-    TelloSocket(driver, command_port),
-    remote_endpoint_(asio::ip::address_v4::from_string(drone_ip), drone_port),
-    send_time_(rclcpp::Time(0L, RCL_ROS_TIME))
+                               unsigned short drone_port, unsigned short command_port) : TelloSocket(driver, command_port),
+                                                                                         remote_endpoint_(boost::asio::ip::address_v4::from_string(drone_ip), drone_port),
+                                                                                         send_time_(rclcpp::Time(0L, RCL_ROS_TIME))
   {
     buffer_ = std::vector<unsigned char>(1024);
     listen();
@@ -18,7 +17,8 @@ namespace tello_driver
     std::lock_guard<std::mutex> lock(mtx_);
     receiving_ = false;
 
-    if (waiting_) {
+    if (waiting_)
+    {
       complete_command(tello_msgs::msg::TelloResponse::TIMEOUT, "error: command timed out");
     }
   }
@@ -39,13 +39,15 @@ namespace tello_driver
   {
     std::lock_guard<std::mutex> lock(mtx_);
 
-    if (!waiting_) {
+    if (!waiting_)
+    {
       RCLCPP_DEBUG(driver_->get_logger(), "Sending '%s'...", command.c_str());
-      socket_.send_to(asio::buffer(command), remote_endpoint_);
+      socket_.send_to(boost::asio::buffer(command), remote_endpoint_);
       send_time_ = driver_->now();
 
       // Wait for a response for all commands except "rc"
-      if (command.rfind("rc", 0) != 0) {
+      if (command.rfind("rc", 0) != 0)
+      {
         respond_ = respond;
         waiting_ = true;
       }
@@ -54,7 +56,8 @@ namespace tello_driver
 
   void CommandSocket::complete_command(uint8_t rc, std::string str)
   {
-    if (respond_) {
+    if (respond_)
+    {
       tello_msgs::msg::TelloResponse response_msg;
       response_msg.rc = rc;
       response_msg.str = str;
@@ -69,16 +72,20 @@ namespace tello_driver
 
     receive_time_ = driver_->now();
 
-    if (!receiving_) {
+    if (!receiving_)
+    {
       receiving_ = true;
     }
 
     std::string str = std::string(buffer_.begin(), buffer_.begin() + r);
-    if (waiting_) {
+    if (waiting_)
+    {
       RCLCPP_DEBUG(driver_->get_logger(), "Received '%s'", str.c_str());
       complete_command(str == "error" ? tello_msgs::msg::TelloResponse::ERROR : tello_msgs::msg::TelloResponse::OK,
                        str);
-    } else {
+    }
+    else
+    {
       RCLCPP_WARN(driver_->get_logger(), "Unexpected '%s'", str.c_str());
     }
   }

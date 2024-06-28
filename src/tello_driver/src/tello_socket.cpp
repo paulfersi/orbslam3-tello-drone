@@ -9,7 +9,7 @@ namespace tello_driver
       [this]()
       {
         for (;;) {
-          size_t r = socket_.receive(asio::buffer(buffer_));
+          size_t r = socket_.receive(boost::asio::buffer(buffer_));
           process_packet(r);
         }
       });
