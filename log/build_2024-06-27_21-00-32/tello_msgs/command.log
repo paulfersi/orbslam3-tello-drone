@@ -1,2 +1,0 @@
-Invoking command in '/home/sonia/orbslam3-tello-drone/build/tello_msgs': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/sonia/orbslam3-tello-drone/build/tello_msgs -- -j8 -l8
-Invoked command in '/home/sonia/orbslam3-tello-drone/build/tello_msgs' returned '2': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/sonia/orbslam3-tello-drone/build/tello_msgs -- -j8 -l8

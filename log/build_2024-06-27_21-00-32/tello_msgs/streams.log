@@ -1,5 +1,0 @@
-[0.027s] Invoking command in '/home/sonia/orbslam3-tello-drone/build/tello_msgs': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/sonia/orbslam3-tello-drone/build/tello_msgs -- -j8 -l8
-[0.062s] CMake Error: The source directory "/home/sonia/orbslam3-tello-drone/tello_msgs" does not exist.
-[0.062s] Specify --help for usage, or press the help button on the CMake GUI.
-[0.064s] make: *** [Makefile:222: cmake_check_build_system] Error 1
-[0.067s] Invoked command in '/home/sonia/orbslam3-tello-drone/build/tello_msgs' returned '2': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/sonia/orbslam3-tello-drone/build/tello_msgs -- -j8 -l8
