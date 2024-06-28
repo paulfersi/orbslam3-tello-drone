@@ -10,7 +10,7 @@
 
 #include "h264decoder.hpp"
 
-using asio::ip::udp;
+using boost::asio::ip::udp;
 
 namespace tello_driver
 {
@@ -40,7 +40,6 @@ namespace tello_driver
   class TelloDriverNode : public rclcpp::Node
   {
   public:
-
     explicit TelloDriverNode(const rclcpp::NodeOptions &options);
 
     ~TelloDriverNode();
@@ -52,13 +51,12 @@ namespace tello_driver
     rclcpp::Publisher<tello_msgs::msg::TelloResponse>::SharedPtr tello_response_pub_;
 
   private:
-
     void timer_callback();
 
     void command_callback(
-      const std::shared_ptr<rmw_request_id_t> request_header,
-      const std::shared_ptr<tello_msgs::srv::TelloAction::Request> request,
-      std::shared_ptr<tello_msgs::srv::TelloAction::Response> response);
+        const std::shared_ptr<rmw_request_id_t> request_header,
+        const std::shared_ptr<tello_msgs::srv::TelloAction::Request> request,
+        std::shared_ptr<tello_msgs::srv::TelloAction::Response> response);
 
     void cmd_vel_callback(const geometry_msgs::msg::Twist::SharedPtr msg);
 
@@ -84,10 +82,9 @@ namespace tello_driver
   class TelloSocket
   {
   public:
-
-    TelloSocket(TelloDriverNode *driver, unsigned short port) :
-      driver_(driver), socket_(io_service_, udp::endpoint(udp::v4(), port))
-    {}
+    TelloSocket(TelloDriverNode *driver, unsigned short port) : driver_(driver), socket_(io_service_, udp::endpoint(udp::v4(), port))
+    {
+    }
 
     bool receiving();
 
@@ -96,19 +93,18 @@ namespace tello_driver
     virtual void timeout();
 
   protected:
-
     void listen();
 
     virtual void process_packet(size_t r) = 0;
 
-    TelloDriverNode *driver_;             // Pointer to the driver node
-    asio::io_service io_service_;         // Manages IO for this socket
-    udp::socket socket_;                  // The socket
-    std::thread thread_;                  // Each socket receives on it's own thread
-    std::mutex mtx_;                      // All public calls must be guarded
-    bool receiving_ = false;              // Are we receiving packets on this socket?
-    rclcpp::Time receive_time_;           // Time of most recent receive
-    std::vector<unsigned char> buffer_;   // Packet buffer
+    TelloDriverNode *driver_;            // Pointer to the driver node
+    boost::asio::io_service io_service_; // Manages IO for this socket
+    udp::socket socket_;                 // The socket
+    std::thread thread_;                 // Each socket receives on it's own thread
+    std::mutex mtx_;                     // All public calls must be guarded
+    bool receiving_ = false;             // Are we receiving packets on this socket?
+    rclcpp::Time receive_time_;          // Time of most recent receive
+    std::vector<unsigned char> buffer_;  // Packet buffer
   };
 
   //=====================================================================================
@@ -118,7 +114,6 @@ namespace tello_driver
   class CommandSocket : public TelloSocket
   {
   public:
-
     CommandSocket(TelloDriverNode *driver, std::string drone_ip, unsigned short drone_port,
                   unsigned short command_port);
 
@@ -131,16 +126,15 @@ namespace tello_driver
     void initiate_command(std::string command, bool respond);
 
   private:
-
     void process_packet(size_t r) override;
 
     void complete_command(uint8_t rc, std::string str);
 
     udp::endpoint remote_endpoint_;
 
-    rclcpp::Time send_time_;  // Time of most recent send
-    bool respond_;            // Send response on tello_response_pub_
-    bool waiting_ = false;    // Are we waiting for a response?
+    rclcpp::Time send_time_; // Time of most recent send
+    bool respond_;           // Send response on tello_response_pub_
+    bool waiting_ = false;   // Are we waiting for a response?
   };
 
   //=====================================================================================
@@ -150,14 +144,12 @@ namespace tello_driver
   class StateSocket : public TelloSocket
   {
   public:
-
     StateSocket(TelloDriverNode *driver, unsigned short data_port);
 
   private:
-
     void process_packet(size_t r) override;
 
-    uint8_t sdk_ = tello_msgs::msg::FlightData::SDK_UNKNOWN;  // Tello SDK version
+    uint8_t sdk_ = tello_msgs::msg::FlightData::SDK_UNKNOWN; // Tello SDK version
   };
 
   //=====================================================================================
@@ -167,21 +159,19 @@ namespace tello_driver
   class VideoSocket : public TelloSocket
   {
   public:
-
     VideoSocket(TelloDriverNode *driver, unsigned short video_port, const std::string &camera_info_path);
 
   private:
-
     void process_packet(size_t r) override;
 
     void decode_frames();
 
-    std::vector<unsigned char> seq_buffer_;   // Collect video packets into a larger sequence
-    size_t seq_buffer_next_ = 0;              // Next available spot in the sequence buffer
-    int seq_buffer_num_packets_ = 0;          // How many packets we've collected, for debugging
+    std::vector<unsigned char> seq_buffer_; // Collect video packets into a larger sequence
+    size_t seq_buffer_next_ = 0;            // Next available spot in the sequence buffer
+    int seq_buffer_num_packets_ = 0;        // How many packets we've collected, for debugging
 
-    H264Decoder decoder_;                     // Decodes h264
-    ConverterRGB24 converter_;                // Converts pixels from YUV420P to BGR24
+    H264Decoder decoder_;      // Decodes h264
+    ConverterRGB24 converter_; // Converts pixels from YUV420P to BGR24
 
     sensor_msgs::msg::CameraInfo camera_info_msg_;
   };
