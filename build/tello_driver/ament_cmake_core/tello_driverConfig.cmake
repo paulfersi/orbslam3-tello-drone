@@ -16,7 +16,7 @@ set(_tello_driver_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT tello_driver_FIND_QUIETLY)
-  message(STATUS "Found tello_driver: 0.0.0 (${tello_driver_DIR})")
+  message(STATUS "Found tello_driver: 0.1.0 (${tello_driver_DIR})")
 endif()
 
 # warn when using a deprecated package

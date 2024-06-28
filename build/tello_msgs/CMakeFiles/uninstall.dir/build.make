@@ -43,7 +43,7 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sonia/orbslam3-tello-drone/tello_msgs
+CMAKE_SOURCE_DIR = /home/sonia/orbslam3-tello-drone/src/tello_msgs
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/sonia/orbslam3-tello-drone/build/tello_msgs
@@ -67,6 +67,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/sonia/orbslam3-tello-drone/build/tello_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sonia/orbslam3-tello-drone/tello_msgs /home/sonia/orbslam3-tello-drone/tello_msgs /home/sonia/orbslam3-tello-drone/build/tello_msgs /home/sonia/orbslam3-tello-drone/build/tello_msgs /home/sonia/orbslam3-tello-drone/build/tello_msgs/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sonia/orbslam3-tello-drone/build/tello_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sonia/orbslam3-tello-drone/src/tello_msgs /home/sonia/orbslam3-tello-drone/src/tello_msgs /home/sonia/orbslam3-tello-drone/build/tello_msgs /home/sonia/orbslam3-tello-drone/build/tello_msgs /home/sonia/orbslam3-tello-drone/build/tello_msgs/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

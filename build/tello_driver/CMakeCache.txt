@@ -275,22 +275,13 @@ SITE:STRING=sonia-Lenovo
 TinyXML2_DIR:PATH=TinyXML2_DIR-NOTFOUND
 
 //Path to a library.
-_lib:FILEPATH=/opt/ros/foxy/lib/libcomposition_interfaces__rosidl_typesupport_fastrtps_cpp.so
+_lib:FILEPATH=/home/sonia/orbslam3-tello-drone/install/tello_msgs/lib/libtello_msgs__rosidl_typesupport_fastrtps_cpp.so
 
 //The directory containing a CMake configuration file for ament_cmake.
 ament_cmake_DIR:PATH=/opt/ros/foxy/share/ament_cmake/cmake
 
-//The directory containing a CMake configuration file for ament_cmake_copyright.
-ament_cmake_copyright_DIR:PATH=/opt/ros/foxy/share/ament_cmake_copyright/cmake
-
 //The directory containing a CMake configuration file for ament_cmake_core.
 ament_cmake_core_DIR:PATH=/opt/ros/foxy/share/ament_cmake_core/cmake
-
-//The directory containing a CMake configuration file for ament_cmake_cppcheck.
-ament_cmake_cppcheck_DIR:PATH=/opt/ros/foxy/share/ament_cmake_cppcheck/cmake
-
-//The directory containing a CMake configuration file for ament_cmake_cpplint.
-ament_cmake_cpplint_DIR:PATH=/opt/ros/foxy/share/ament_cmake_cpplint/cmake
 
 //The directory containing a CMake configuration file for ament_cmake_export_definitions.
 ament_cmake_export_definitions_DIR:PATH=/opt/ros/foxy/share/ament_cmake_export_definitions/cmake
@@ -313,20 +304,11 @@ ament_cmake_export_link_flags_DIR:PATH=/opt/ros/foxy/share/ament_cmake_export_li
 //The directory containing a CMake configuration file for ament_cmake_export_targets.
 ament_cmake_export_targets_DIR:PATH=/opt/ros/foxy/share/ament_cmake_export_targets/cmake
 
-//The directory containing a CMake configuration file for ament_cmake_flake8.
-ament_cmake_flake8_DIR:PATH=/opt/ros/foxy/share/ament_cmake_flake8/cmake
-
 //The directory containing a CMake configuration file for ament_cmake_include_directories.
 ament_cmake_include_directories_DIR:PATH=/opt/ros/foxy/share/ament_cmake_include_directories/cmake
 
 //The directory containing a CMake configuration file for ament_cmake_libraries.
 ament_cmake_libraries_DIR:PATH=/opt/ros/foxy/share/ament_cmake_libraries/cmake
-
-//The directory containing a CMake configuration file for ament_cmake_lint_cmake.
-ament_cmake_lint_cmake_DIR:PATH=/opt/ros/foxy/share/ament_cmake_lint_cmake/cmake
-
-//The directory containing a CMake configuration file for ament_cmake_pep257.
-ament_cmake_pep257_DIR:PATH=/opt/ros/foxy/share/ament_cmake_pep257/cmake
 
 //The directory containing a CMake configuration file for ament_cmake_python.
 ament_cmake_python_DIR:PATH=/opt/ros/foxy/share/ament_cmake_python/cmake
@@ -337,32 +319,11 @@ ament_cmake_target_dependencies_DIR:PATH=/opt/ros/foxy/share/ament_cmake_target_
 //The directory containing a CMake configuration file for ament_cmake_test.
 ament_cmake_test_DIR:PATH=/opt/ros/foxy/share/ament_cmake_test/cmake
 
-//The directory containing a CMake configuration file for ament_cmake_uncrustify.
-ament_cmake_uncrustify_DIR:PATH=/opt/ros/foxy/share/ament_cmake_uncrustify/cmake
-
 //The directory containing a CMake configuration file for ament_cmake_version.
 ament_cmake_version_DIR:PATH=/opt/ros/foxy/share/ament_cmake_version/cmake
 
-//The directory containing a CMake configuration file for ament_cmake_xmllint.
-ament_cmake_xmllint_DIR:PATH=/opt/ros/foxy/share/ament_cmake_xmllint/cmake
-
-//Path to a program.
-ament_copyright_BIN:FILEPATH=/opt/ros/foxy/bin/ament_copyright
-
 //The directory containing a CMake configuration file for ament_index_cpp.
 ament_index_cpp_DIR:PATH=/opt/ros/foxy/share/ament_index_cpp/cmake
-
-//The directory containing a CMake configuration file for ament_lint_auto.
-ament_lint_auto_DIR:PATH=/opt/ros/foxy/share/ament_lint_auto/cmake
-
-//Path to a program.
-ament_lint_cmake_BIN:FILEPATH=/opt/ros/foxy/bin/ament_lint_cmake
-
-//The directory containing a CMake configuration file for ament_lint_common.
-ament_lint_common_DIR:PATH=/opt/ros/foxy/share/ament_lint_common/cmake
-
-//Path to a program.
-ament_xmllint_BIN:FILEPATH=/opt/ros/foxy/bin/ament_xmllint
 
 //The directory containing a CMake configuration file for builtin_interfaces.
 builtin_interfaces_DIR:PATH=/opt/ros/foxy/share/builtin_interfaces/cmake
@@ -443,7 +404,7 @@ rmw_implementation_DIR:PATH=/opt/ros/foxy/share/rmw_implementation/cmake
 rmw_implementation_cmake_DIR:PATH=/opt/ros/foxy/share/rmw_implementation_cmake/cmake
 
 //The directory containing a CMake configuration file for ros2_shared.
-ros2_shared_DIR:PATH=ros2_shared_DIR-NOTFOUND
+ros2_shared_DIR:PATH=/home/sonia/orbslam3-tello-drone/install/ros2_shared/share/ros2_shared/cmake
 
 //The directory containing a CMake configuration file for rosgraph_msgs.
 rosgraph_msgs_DIR:PATH=/opt/ros/foxy/share/rosgraph_msgs/cmake
@@ -511,11 +472,17 @@ tello_driver_BINARY_DIR:STATIC=/home/sonia/orbslam3-tello-drone/build/tello_driv
 //Value Computed by CMake
 tello_driver_SOURCE_DIR:STATIC=/home/sonia/orbslam3-tello-drone/src/tello_driver
 
+//Dependencies for the target
+tello_driver_node_LIB_DEPENDS:STATIC=general;class_loader::class_loader;general;geometry_msgs::geometry_msgs__rosidl_generator_c;general;geometry_msgs::geometry_msgs__rosidl_typesupport_introspection_c;general;geometry_msgs::geometry_msgs__rosidl_typesupport_c;general;geometry_msgs::geometry_msgs__rosidl_typesupport_introspection_cpp;general;geometry_msgs::geometry_msgs__rosidl_typesupport_cpp;general;rclcpp::rclcpp;general;sensor_msgs::sensor_msgs__rosidl_generator_c;general;sensor_msgs::sensor_msgs__rosidl_typesupport_introspection_c;general;sensor_msgs::sensor_msgs__rosidl_typesupport_c;general;sensor_msgs::sensor_msgs__rosidl_typesupport_introspection_cpp;general;sensor_msgs::sensor_msgs__rosidl_typesupport_cpp;general;std_msgs::std_msgs__rosidl_generator_c;general;std_msgs::std_msgs__rosidl_typesupport_introspection_c;general;std_msgs::std_msgs__rosidl_typesupport_c;general;std_msgs::std_msgs__rosidl_typesupport_introspection_cpp;general;std_msgs::std_msgs__rosidl_typesupport_cpp;general;tello_msgs::tello_msgs__rosidl_generator_c;general;tello_msgs::tello_msgs__rosidl_typesupport_introspection_c;general;tello_msgs::tello_msgs__rosidl_typesupport_c;general;tello_msgs::tello_msgs__rosidl_typesupport_introspection_cpp;general;tello_msgs::tello_msgs__rosidl_typesupport_cpp;general;/opt/ros/foxy/lib/libcamera_calibration_parsers.so;general;/opt/ros/foxy/lib/librosgraph_msgs__rosidl_generator_c.so;general;/opt/ros/foxy/lib/librosgraph_msgs__rosidl_typesupport_introspection_c.so;general;/opt/ros/foxy/lib/librosgraph_msgs__rosidl_typesupport_c.so;general;/opt/ros/foxy/lib/librosgraph_msgs__rosidl_typesupport_introspection_cpp.so;general;/opt/ros/foxy/lib/librosgraph_msgs__rosidl_typesupport_cpp.so;general;/opt/ros/foxy/lib/librcl_yaml_param_parser.so;general;yaml;general;/opt/ros/foxy/lib/libstatistics_msgs__rosidl_generator_c.so;general;/opt/ros/foxy/lib/libstatistics_msgs__rosidl_typesupport_introspection_c.so;general;/opt/ros/foxy/lib/libstatistics_msgs__rosidl_typesupport_c.so;general;/opt/ros/foxy/lib/libstatistics_msgs__rosidl_typesupport_introspection_cpp.so;general;/opt/ros/foxy/lib/libstatistics_msgs__rosidl_typesupport_cpp.so;general;/opt/ros/foxy/lib/libtracetools.so;general;/opt/ros/foxy/lib/librclcpp.so;general;-lpthread;general;libstatistics_collector::libstatistics_collector;general;libstatistics_collector::libstatistics_collector_test_msgs__rosidl_generator_c;general;libstatistics_collector::libstatistics_collector_test_msgs__rosidl_typesupport_introspection_c;general;libstatistics_collector::libstatistics_collector_test_msgs__rosidl_typesupport_c;general;libstatistics_collector::libstatistics_collector_test_msgs__rosidl_typesupport_introspection_cpp;general;libstatistics_collector::libstatistics_collector_test_msgs__rosidl_typesupport_cpp;general;rcl::rcl;general;rcl_yaml_param_parser::rcl_yaml_param_parser;general;rosgraph_msgs::rosgraph_msgs__rosidl_generator_c;general;rosgraph_msgs::rosgraph_msgs__rosidl_typesupport_introspection_c;general;rosgraph_msgs::rosgraph_msgs__rosidl_typesupport_c;general;rosgraph_msgs::rosgraph_msgs__rosidl_typesupport_introspection_cpp;general;rosgraph_msgs::rosgraph_msgs__rosidl_typesupport_cpp;general;statistics_msgs::statistics_msgs__rosidl_generator_c;general;statistics_msgs::statistics_msgs__rosidl_typesupport_introspection_c;general;statistics_msgs::statistics_msgs__rosidl_typesupport_c;general;statistics_msgs::statistics_msgs__rosidl_typesupport_introspection_cpp;general;statistics_msgs::statistics_msgs__rosidl_typesupport_cpp;general;tracetools::tracetools;general;/opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_generator_c.so;general;/opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_c.so;general;/opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_c.so;general;/opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_cpp.so;general;/opt/ros/foxy/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so;general;/opt/ros/foxy/lib/libgeometry_msgs__rosidl_generator_c.so;general;/opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_introspection_c.so;general;/opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_c.so;general;/opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so;general;/opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_cpp.so;general;/opt/ros/foxy/lib/libstd_msgs__rosidl_generator_c.so;general;/opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_introspection_c.so;general;/opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_c.so;general;/opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_introspection_cpp.so;general;/opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_cpp.so;general;/opt/ros/foxy/lib/librcutils.so;general;dl;general;/opt/ros/foxy/lib/librcpputils.so;general;/opt/ros/foxy/lib/librosidl_typesupport_c.so;general;rcpputils::rcpputils;general;/opt/ros/foxy/lib/librosidl_typesupport_cpp.so;general;/opt/ros/foxy/lib/librosidl_runtime_c.so;general;/opt/ros/foxy/lib/librosidl_typesupport_introspection_c.so;general;/opt/ros/foxy/lib/librosidl_typesupport_introspection_cpp.so;general;/opt/ros/foxy/opt/yaml_cpp_vendor/lib/libyaml-cpp.so.0.6.2;general;/opt/ros/foxy/lib/libsensor_msgs__rosidl_generator_c.so;general;rcutils::rcutils;general;/opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_introspection_c.so;general;sensor_msgs::sensor_msgs__rosidl_generator_c;general;rosidl_typesupport_introspection_c::rosidl_typesupport_introspection_c;general;/opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_c.so;general;rosidl_typesupport_c::rosidl_typesupport_c;general;/opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_introspection_cpp.so;general;rosidl_typesupport_introspection_cpp::rosidl_typesupport_introspection_cpp;general;/opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_cpp.so;general;rosidl_runtime_c::rosidl_runtime_c;general;rosidl_typesupport_cpp::rosidl_typesupport_cpp;general;builtin_interfaces::builtin_interfaces__rosidl_generator_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_introspection_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_introspection_cpp;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_cpp;general;geometry_msgs::geometry_msgs__rosidl_generator_c;general;geometry_msgs::geometry_msgs__rosidl_typesupport_introspection_c;general;geometry_msgs::geometry_msgs__rosidl_typesupport_c;general;geometry_msgs::geometry_msgs__rosidl_typesupport_introspection_cpp;general;geometry_msgs::geometry_msgs__rosidl_typesupport_cpp;general;std_msgs::std_msgs__rosidl_generator_c;general;std_msgs::std_msgs__rosidl_typesupport_introspection_c;general;std_msgs::std_msgs__rosidl_typesupport_c;general;std_msgs::std_msgs__rosidl_typesupport_introspection_cpp;general;std_msgs::std_msgs__rosidl_typesupport_cpp;general;/opt/ros/foxy/lib/libcv_bridge.so;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_stitching;general;opencv_video;general;opencv_videoio;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_datasets;general;opencv_dnn_objdetect;general;opencv_dnn_superres;general;opencv_dpm;general;opencv_face;general;opencv_freetype;general;opencv_fuzzy;general;opencv_hdf;general;opencv_hfs;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_quality;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_shape;general;opencv_stereo;general;opencv_structured_light;general;opencv_superres;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_videostab;general;opencv_viz;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;avcodec;general;avutil;general;swscale;
+
+//Dependencies for the target
+tello_joy_node_LIB_DEPENDS:STATIC=general;class_loader::class_loader;general;geometry_msgs::geometry_msgs__rosidl_generator_c;general;geometry_msgs::geometry_msgs__rosidl_typesupport_introspection_c;general;geometry_msgs::geometry_msgs__rosidl_typesupport_c;general;geometry_msgs::geometry_msgs__rosidl_typesupport_introspection_cpp;general;geometry_msgs::geometry_msgs__rosidl_typesupport_cpp;general;rclcpp::rclcpp;general;sensor_msgs::sensor_msgs__rosidl_generator_c;general;sensor_msgs::sensor_msgs__rosidl_typesupport_introspection_c;general;sensor_msgs::sensor_msgs__rosidl_typesupport_c;general;sensor_msgs::sensor_msgs__rosidl_typesupport_introspection_cpp;general;sensor_msgs::sensor_msgs__rosidl_typesupport_cpp;general;tello_msgs::tello_msgs__rosidl_generator_c;general;tello_msgs::tello_msgs__rosidl_typesupport_introspection_c;general;tello_msgs::tello_msgs__rosidl_typesupport_c;general;tello_msgs::tello_msgs__rosidl_typesupport_introspection_cpp;general;tello_msgs::tello_msgs__rosidl_typesupport_cpp;
+
+//The directory containing a CMake configuration file for tello_msgs.
+tello_msgs_DIR:PATH=/home/sonia/orbslam3-tello-drone/install/tello_msgs/share/tello_msgs/cmake
+
 //The directory containing a CMake configuration file for tracetools.
 tracetools_DIR:PATH=/opt/ros/foxy/share/tracetools/cmake
-
-//Path to a program.
-xmllint_BIN:FILEPATH=/usr/bin/xmllint
 
 //The directory containing a CMake configuration file for yaml.
 yaml_DIR:PATH=/opt/ros/foxy/cmake

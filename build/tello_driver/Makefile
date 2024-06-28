@@ -68,17 +68,15 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -92,15 +90,16 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target test
+test/fast: test
 
-.PHONY : list_install_components/fast
+.PHONY : test/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -124,16 +123,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,17 +168,69 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named tello_driver_uninstall
+# Target rules for targets named tello_joy_main
 
 # Build rule for target.
-tello_driver_uninstall: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tello_driver_uninstall
-.PHONY : tello_driver_uninstall
+tello_joy_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tello_joy_main
+.PHONY : tello_joy_main
 
 # fast build rule for target.
-tello_driver_uninstall/fast:
-	$(MAKE) -f CMakeFiles/tello_driver_uninstall.dir/build.make CMakeFiles/tello_driver_uninstall.dir/build
-.PHONY : tello_driver_uninstall/fast
+tello_joy_main/fast:
+	$(MAKE) -f CMakeFiles/tello_joy_main.dir/build.make CMakeFiles/tello_joy_main.dir/build
+.PHONY : tello_joy_main/fast
+
+#=============================================================================
+# Target rules for targets named tello_driver_node
+
+# Build rule for target.
+tello_driver_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tello_driver_node
+.PHONY : tello_driver_node
+
+# fast build rule for target.
+tello_driver_node/fast:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/build
+.PHONY : tello_driver_node/fast
+
+#=============================================================================
+# Target rules for targets named tello_driver_main
+
+# Build rule for target.
+tello_driver_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tello_driver_main
+.PHONY : tello_driver_main
+
+# fast build rule for target.
+tello_driver_main/fast:
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/build
+.PHONY : tello_driver_main/fast
+
+#=============================================================================
+# Target rules for targets named tello_emulator
+
+# Build rule for target.
+tello_emulator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tello_emulator
+.PHONY : tello_emulator
+
+# fast build rule for target.
+tello_emulator/fast:
+	$(MAKE) -f CMakeFiles/tello_emulator.dir/build.make CMakeFiles/tello_emulator.dir/build
+.PHONY : tello_emulator/fast
+
+#=============================================================================
+# Target rules for targets named tello_joy_node
+
+# Build rule for target.
+tello_joy_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tello_joy_node
+.PHONY : tello_joy_node
+
+# fast build rule for target.
+tello_joy_node/fast:
+	$(MAKE) -f CMakeFiles/tello_joy_node.dir/build.make CMakeFiles/tello_joy_node.dir/build
+.PHONY : tello_joy_node/fast
 
 #=============================================================================
 # Target rules for targets named uninstall
@@ -193,21 +245,360 @@ uninstall/fast:
 	$(MAKE) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
 
+#=============================================================================
+# Target rules for targets named tello_driver_uninstall
+
+# Build rule for target.
+tello_driver_uninstall: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tello_driver_uninstall
+.PHONY : tello_driver_uninstall
+
+# fast build rule for target.
+tello_driver_uninstall/fast:
+	$(MAKE) -f CMakeFiles/tello_driver_uninstall.dir/build.make CMakeFiles/tello_driver_uninstall.dir/build
+.PHONY : tello_driver_uninstall/fast
+
+h264decoder/h264decoder.o: h264decoder/h264decoder.cpp.o
+
+.PHONY : h264decoder/h264decoder.o
+
+# target to build an object file
+h264decoder/h264decoder.cpp.o:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/h264decoder/h264decoder.cpp.o
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/h264decoder/h264decoder.cpp.o
+.PHONY : h264decoder/h264decoder.cpp.o
+
+h264decoder/h264decoder.i: h264decoder/h264decoder.cpp.i
+
+.PHONY : h264decoder/h264decoder.i
+
+# target to preprocess a source file
+h264decoder/h264decoder.cpp.i:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/h264decoder/h264decoder.cpp.i
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/h264decoder/h264decoder.cpp.i
+.PHONY : h264decoder/h264decoder.cpp.i
+
+h264decoder/h264decoder.s: h264decoder/h264decoder.cpp.s
+
+.PHONY : h264decoder/h264decoder.s
+
+# target to generate assembly for a file
+h264decoder/h264decoder.cpp.s:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/h264decoder/h264decoder.cpp.s
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/h264decoder/h264decoder.cpp.s
+.PHONY : h264decoder/h264decoder.cpp.s
+
+src/command_socket.o: src/command_socket.cpp.o
+
+.PHONY : src/command_socket.o
+
+# target to build an object file
+src/command_socket.cpp.o:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/src/command_socket.cpp.o
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/command_socket.cpp.o
+.PHONY : src/command_socket.cpp.o
+
+src/command_socket.i: src/command_socket.cpp.i
+
+.PHONY : src/command_socket.i
+
+# target to preprocess a source file
+src/command_socket.cpp.i:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/src/command_socket.cpp.i
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/command_socket.cpp.i
+.PHONY : src/command_socket.cpp.i
+
+src/command_socket.s: src/command_socket.cpp.s
+
+.PHONY : src/command_socket.s
+
+# target to generate assembly for a file
+src/command_socket.cpp.s:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/src/command_socket.cpp.s
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/command_socket.cpp.s
+.PHONY : src/command_socket.cpp.s
+
+src/state_socket.o: src/state_socket.cpp.o
+
+.PHONY : src/state_socket.o
+
+# target to build an object file
+src/state_socket.cpp.o:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/src/state_socket.cpp.o
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/state_socket.cpp.o
+.PHONY : src/state_socket.cpp.o
+
+src/state_socket.i: src/state_socket.cpp.i
+
+.PHONY : src/state_socket.i
+
+# target to preprocess a source file
+src/state_socket.cpp.i:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/src/state_socket.cpp.i
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/state_socket.cpp.i
+.PHONY : src/state_socket.cpp.i
+
+src/state_socket.s: src/state_socket.cpp.s
+
+.PHONY : src/state_socket.s
+
+# target to generate assembly for a file
+src/state_socket.cpp.s:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/src/state_socket.cpp.s
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/state_socket.cpp.s
+.PHONY : src/state_socket.cpp.s
+
+src/tello_driver_main.o: src/tello_driver_main.cpp.o
+
+.PHONY : src/tello_driver_main.o
+
+# target to build an object file
+src/tello_driver_main.cpp.o:
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/tello_driver_main.cpp.o
+.PHONY : src/tello_driver_main.cpp.o
+
+src/tello_driver_main.i: src/tello_driver_main.cpp.i
+
+.PHONY : src/tello_driver_main.i
+
+# target to preprocess a source file
+src/tello_driver_main.cpp.i:
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/tello_driver_main.cpp.i
+.PHONY : src/tello_driver_main.cpp.i
+
+src/tello_driver_main.s: src/tello_driver_main.cpp.s
+
+.PHONY : src/tello_driver_main.s
+
+# target to generate assembly for a file
+src/tello_driver_main.cpp.s:
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/tello_driver_main.cpp.s
+.PHONY : src/tello_driver_main.cpp.s
+
+src/tello_driver_node.o: src/tello_driver_node.cpp.o
+
+.PHONY : src/tello_driver_node.o
+
+# target to build an object file
+src/tello_driver_node.cpp.o:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/src/tello_driver_node.cpp.o
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/tello_driver_node.cpp.o
+.PHONY : src/tello_driver_node.cpp.o
+
+src/tello_driver_node.i: src/tello_driver_node.cpp.i
+
+.PHONY : src/tello_driver_node.i
+
+# target to preprocess a source file
+src/tello_driver_node.cpp.i:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/src/tello_driver_node.cpp.i
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/tello_driver_node.cpp.i
+.PHONY : src/tello_driver_node.cpp.i
+
+src/tello_driver_node.s: src/tello_driver_node.cpp.s
+
+.PHONY : src/tello_driver_node.s
+
+# target to generate assembly for a file
+src/tello_driver_node.cpp.s:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/src/tello_driver_node.cpp.s
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/tello_driver_node.cpp.s
+.PHONY : src/tello_driver_node.cpp.s
+
+src/tello_emulator.o: src/tello_emulator.cpp.o
+
+.PHONY : src/tello_emulator.o
+
+# target to build an object file
+src/tello_emulator.cpp.o:
+	$(MAKE) -f CMakeFiles/tello_emulator.dir/build.make CMakeFiles/tello_emulator.dir/src/tello_emulator.cpp.o
+.PHONY : src/tello_emulator.cpp.o
+
+src/tello_emulator.i: src/tello_emulator.cpp.i
+
+.PHONY : src/tello_emulator.i
+
+# target to preprocess a source file
+src/tello_emulator.cpp.i:
+	$(MAKE) -f CMakeFiles/tello_emulator.dir/build.make CMakeFiles/tello_emulator.dir/src/tello_emulator.cpp.i
+.PHONY : src/tello_emulator.cpp.i
+
+src/tello_emulator.s: src/tello_emulator.cpp.s
+
+.PHONY : src/tello_emulator.s
+
+# target to generate assembly for a file
+src/tello_emulator.cpp.s:
+	$(MAKE) -f CMakeFiles/tello_emulator.dir/build.make CMakeFiles/tello_emulator.dir/src/tello_emulator.cpp.s
+.PHONY : src/tello_emulator.cpp.s
+
+src/tello_joy_main.o: src/tello_joy_main.cpp.o
+
+.PHONY : src/tello_joy_main.o
+
+# target to build an object file
+src/tello_joy_main.cpp.o:
+	$(MAKE) -f CMakeFiles/tello_joy_main.dir/build.make CMakeFiles/tello_joy_main.dir/src/tello_joy_main.cpp.o
+.PHONY : src/tello_joy_main.cpp.o
+
+src/tello_joy_main.i: src/tello_joy_main.cpp.i
+
+.PHONY : src/tello_joy_main.i
+
+# target to preprocess a source file
+src/tello_joy_main.cpp.i:
+	$(MAKE) -f CMakeFiles/tello_joy_main.dir/build.make CMakeFiles/tello_joy_main.dir/src/tello_joy_main.cpp.i
+.PHONY : src/tello_joy_main.cpp.i
+
+src/tello_joy_main.s: src/tello_joy_main.cpp.s
+
+.PHONY : src/tello_joy_main.s
+
+# target to generate assembly for a file
+src/tello_joy_main.cpp.s:
+	$(MAKE) -f CMakeFiles/tello_joy_main.dir/build.make CMakeFiles/tello_joy_main.dir/src/tello_joy_main.cpp.s
+.PHONY : src/tello_joy_main.cpp.s
+
+src/tello_joy_node.o: src/tello_joy_node.cpp.o
+
+.PHONY : src/tello_joy_node.o
+
+# target to build an object file
+src/tello_joy_node.cpp.o:
+	$(MAKE) -f CMakeFiles/tello_joy_main.dir/build.make CMakeFiles/tello_joy_main.dir/src/tello_joy_node.cpp.o
+	$(MAKE) -f CMakeFiles/tello_joy_node.dir/build.make CMakeFiles/tello_joy_node.dir/src/tello_joy_node.cpp.o
+.PHONY : src/tello_joy_node.cpp.o
+
+src/tello_joy_node.i: src/tello_joy_node.cpp.i
+
+.PHONY : src/tello_joy_node.i
+
+# target to preprocess a source file
+src/tello_joy_node.cpp.i:
+	$(MAKE) -f CMakeFiles/tello_joy_main.dir/build.make CMakeFiles/tello_joy_main.dir/src/tello_joy_node.cpp.i
+	$(MAKE) -f CMakeFiles/tello_joy_node.dir/build.make CMakeFiles/tello_joy_node.dir/src/tello_joy_node.cpp.i
+.PHONY : src/tello_joy_node.cpp.i
+
+src/tello_joy_node.s: src/tello_joy_node.cpp.s
+
+.PHONY : src/tello_joy_node.s
+
+# target to generate assembly for a file
+src/tello_joy_node.cpp.s:
+	$(MAKE) -f CMakeFiles/tello_joy_main.dir/build.make CMakeFiles/tello_joy_main.dir/src/tello_joy_node.cpp.s
+	$(MAKE) -f CMakeFiles/tello_joy_node.dir/build.make CMakeFiles/tello_joy_node.dir/src/tello_joy_node.cpp.s
+.PHONY : src/tello_joy_node.cpp.s
+
+src/tello_socket.o: src/tello_socket.cpp.o
+
+.PHONY : src/tello_socket.o
+
+# target to build an object file
+src/tello_socket.cpp.o:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/src/tello_socket.cpp.o
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/tello_socket.cpp.o
+.PHONY : src/tello_socket.cpp.o
+
+src/tello_socket.i: src/tello_socket.cpp.i
+
+.PHONY : src/tello_socket.i
+
+# target to preprocess a source file
+src/tello_socket.cpp.i:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/src/tello_socket.cpp.i
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/tello_socket.cpp.i
+.PHONY : src/tello_socket.cpp.i
+
+src/tello_socket.s: src/tello_socket.cpp.s
+
+.PHONY : src/tello_socket.s
+
+# target to generate assembly for a file
+src/tello_socket.cpp.s:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/src/tello_socket.cpp.s
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/tello_socket.cpp.s
+.PHONY : src/tello_socket.cpp.s
+
+src/video_socket.o: src/video_socket.cpp.o
+
+.PHONY : src/video_socket.o
+
+# target to build an object file
+src/video_socket.cpp.o:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/src/video_socket.cpp.o
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/video_socket.cpp.o
+.PHONY : src/video_socket.cpp.o
+
+src/video_socket.i: src/video_socket.cpp.i
+
+.PHONY : src/video_socket.i
+
+# target to preprocess a source file
+src/video_socket.cpp.i:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/src/video_socket.cpp.i
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/video_socket.cpp.i
+.PHONY : src/video_socket.cpp.i
+
+src/video_socket.s: src/video_socket.cpp.s
+
+.PHONY : src/video_socket.s
+
+# target to generate assembly for a file
+src/video_socket.cpp.s:
+	$(MAKE) -f CMakeFiles/tello_driver_node.dir/build.make CMakeFiles/tello_driver_node.dir/src/video_socket.cpp.s
+	$(MAKE) -f CMakeFiles/tello_driver_main.dir/build.make CMakeFiles/tello_driver_main.dir/src/video_socket.cpp.s
+.PHONY : src/video_socket.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... tello_joy_main"
+	@echo "... tello_driver_node"
+	@echo "... tello_driver_main"
+	@echo "... tello_emulator"
 	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... install"
+	@echo "... tello_joy_node"
 	@echo "... list_install_components"
+	@echo "... install"
+	@echo "... uninstall"
+	@echo "... test"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
 	@echo "... tello_driver_uninstall"
-	@echo "... uninstall"
+	@echo "... install/local"
+	@echo "... h264decoder/h264decoder.o"
+	@echo "... h264decoder/h264decoder.i"
+	@echo "... h264decoder/h264decoder.s"
+	@echo "... src/command_socket.o"
+	@echo "... src/command_socket.i"
+	@echo "... src/command_socket.s"
+	@echo "... src/state_socket.o"
+	@echo "... src/state_socket.i"
+	@echo "... src/state_socket.s"
+	@echo "... src/tello_driver_main.o"
+	@echo "... src/tello_driver_main.i"
+	@echo "... src/tello_driver_main.s"
+	@echo "... src/tello_driver_node.o"
+	@echo "... src/tello_driver_node.i"
+	@echo "... src/tello_driver_node.s"
+	@echo "... src/tello_emulator.o"
+	@echo "... src/tello_emulator.i"
+	@echo "... src/tello_emulator.s"
+	@echo "... src/tello_joy_main.o"
+	@echo "... src/tello_joy_main.i"
+	@echo "... src/tello_joy_main.s"
+	@echo "... src/tello_joy_node.o"
+	@echo "... src/tello_joy_node.i"
+	@echo "... src/tello_joy_node.s"
+	@echo "... src/tello_socket.o"
+	@echo "... src/tello_socket.i"
+	@echo "... src/tello_socket.s"
+	@echo "... src/video_socket.o"
+	@echo "... src/video_socket.i"
+	@echo "... src/video_socket.s"
 .PHONY : help
 
 
