@@ -1,6 +1,0 @@
-Invoking command in '/home/sonia/orbslam3-tello-drone/build/tello_driver': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/sonia/orbslam3-tello-drone/src/tello_driver -DCMAKE_INSTALL_PREFIX=/home/sonia/orbslam3-tello-drone/install/tello_driver
-Invoked command in '/home/sonia/orbslam3-tello-drone/build/tello_driver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/sonia/orbslam3-tello-drone/src/tello_driver -DCMAKE_INSTALL_PREFIX=/home/sonia/orbslam3-tello-drone/install/tello_driver
-Invoking command in '/home/sonia/orbslam3-tello-drone/build/tello_driver': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/sonia/orbslam3-tello-drone/build/tello_driver -- -j8 -l8
-Invoked command in '/home/sonia/orbslam3-tello-drone/build/tello_driver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/sonia/orbslam3-tello-drone/build/tello_driver -- -j8 -l8
-Invoking command in '/home/sonia/orbslam3-tello-drone/build/tello_driver': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/sonia/orbslam3-tello-drone/build/tello_driver
-Invoked command in '/home/sonia/orbslam3-tello-drone/build/tello_driver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/sonia/orbslam3-tello-drone/build/tello_driver

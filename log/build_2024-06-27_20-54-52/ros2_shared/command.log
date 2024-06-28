@@ -1,1 +1,0 @@
-Invoking command in '/home/sonia/orbslam3-tello-drone/build/ros2_shared': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/sonia/orbslam3-tello-drone/src/ros2_shared -DCMAKE_INSTALL_PREFIX=/home/sonia/orbslam3-tello-drone/install/ros2_shared

@@ -1,3 +1,0 @@
-CMake Error: The source directory "/home/sonia/orbslam3-tello-drone/tello_msgs" does not exist.
-Specify --help for usage, or press the help button on the CMake GUI.
-make: *** [Makefile:222: cmake_check_build_system] Error 1
