@@ -1,0 +1,8 @@
+.git/
+Log/*.txt
+*__pycache__*
+*Log/
+*log/
+INSTALL
+install/
+build/
