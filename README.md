@@ -27,6 +27,8 @@ cd Pangolin
 # Configure and build
 cmake -B build
 cmake --build build
+
+cmake --build build -t pypangolin_pip_install
 ```
 
 
