@@ -39,3 +39,8 @@ I got issues with the c++ version. I had to change from the c++11 to 14 with the
 ````bash
 sed -i 's/++11/++14/g' CMakeLists.txt
 ```
+## Run monocular mode
+
+ros2 run orbslam3 mono orbslam_ros2/vocabulary/ORBvoc.txt orbslam3_ros2/config/monocular/TUM1.yaml
+
+
