@@ -33,3 +33,9 @@ cmake --build build -t pypangolin_pip_install
 
 
 BE CAREFUL when you build to the number of cores dedicated to the build(in the build.sh file of orbslam next to "make -j" command). The build could freeze the pc due to this
+
+I got issues with the c++ version. I had to change from the c++11 to 14 with the command: 
+
+````bash
+sed -i 's/++11/++14/g' CMakeLists.txt
+```
