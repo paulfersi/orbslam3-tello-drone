@@ -29,7 +29,12 @@ cmake -B build
 cmake --build build
 
 cmake --build build -t pypangolin_pip_install
+
 ```
+
+#### Install Eigen3
+
+sudo apt install libeigen3-dev
 
 
 BE CAREFUL when you build to the number of cores dedicated to the build(in the build.sh file of orbslam next to "make -j" command). The build could freeze the pc due to this
