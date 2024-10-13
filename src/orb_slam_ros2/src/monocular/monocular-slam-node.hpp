@@ -30,6 +30,8 @@ private:
     cv_bridge::CvImagePtr m_cvImPtr;
 
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr m_image_subscriber;
+
+    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr quaternion_pub;
 };
 
 #endif
