@@ -27,16 +27,6 @@ MonocularSlamNode::~MonocularSlamNode()
     m_SLAM->SaveKeyFrameTrajectoryTUM("KeyFrameTrajectory.txt");
 }
 
-/**
- * Function that returns a string with quaternion, each value is separated by a space.
- */
-static std::string quaternionToString(const Eigen::Quaternionf &q)
-{
-    std::stringstream ss;
-    ss << setprecision(9) << q.x() << " " << q.y() << " " << q.z() << " " << q.w() << endl;
-    return ss.str();
-}
-
 //callback
 
 void MonocularSlamNode::GrabImage(const ImageMsg::SharedPtr msg)
@@ -61,9 +51,6 @@ void MonocularSlamNode::GrabImage(const ImageMsg::SharedPtr msg)
     Sophus::SE3f Twc = Tcw.inverse();
     Eigen::Vector3f twc = Twc.translation();
     Eigen::Quaternionf q = Twc.unit_quaternion();
-
-    // String containing the quaternion
-    std::string messaggio_quaternion = quaternionToString(q);
 
     // I publish position and quaternion (rotated)
     auto message = nav_msgs::msg::Odometry();
