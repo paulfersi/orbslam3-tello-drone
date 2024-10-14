@@ -17,9 +17,14 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
+find_package(Qt5 COMPONENTS Widgets REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(tello_msgs REQUIRED)
+
+add_executable(drone_info_gui_node src/drone_info_gui_node.cpp)
+target_link_libraries(drone_info_gui_node Qt5::Widgets)
+ament_target_dependencies(drone_info_gui_node rclcpp tello_msgs)
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
