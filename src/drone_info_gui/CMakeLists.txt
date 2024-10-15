@@ -25,6 +25,14 @@ add_executable(drone_info_gui_node src/drone_info_gui_node.cpp)
 target_link_libraries(drone_info_gui_node Qt5::Widgets)
 ament_target_dependencies(drone_info_gui_node rclcpp tello_msgs)
 
+add_library(${PROJECT_NAME} src/drone_info_gui_node)
+
+
+install(DIRECTORY 
+    launch 
+    DESTINATION share/${PROJECT_NAME}/
+)
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
