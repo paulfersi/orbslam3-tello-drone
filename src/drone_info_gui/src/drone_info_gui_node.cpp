@@ -25,10 +25,10 @@ DroneInfoGuiNode::DroneInfoGuiNode()
 
     window->show();
 
-    // Set up a timer to spin ROS2 periodically
+    // timer to spin ROS2 periodically
     QTimer *timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, [&]()
-            { rclcpp::spin_some(this->shared_from_this()); });
+    connect(timer, &QTimer::timeout, [this]()
+            { rclcpp::spin_some(this); });
     timer->start(16); // Approximately 60 Hz
 }
 
@@ -47,9 +47,7 @@ void DroneInfoGuiNode::flight_data_callback(const tello_msgs::msg::FlightData::S
 int main(int argc, char *argv[])
 {
     rclcpp::init(argc, argv);
-
     QApplication q_application(argc, argv);
     auto node = std::make_shared<DroneInfoGuiNode>();
-
     return q_application.exec();
 }

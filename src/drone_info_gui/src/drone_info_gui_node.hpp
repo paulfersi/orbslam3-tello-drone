@@ -8,9 +8,8 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QTimer>
-#include <memory> // For std::enable_shared_from_this
 
-class DroneInfoGuiNode : public rclcpp::Node, public std::enable_shared_from_this<DroneInfoGuiNode>
+class DroneInfoGuiNode : public rclcpp::Node
 {
 public:
     DroneInfoGuiNode();
