@@ -2,7 +2,7 @@
 #define DRONE_INFO_GUI_NODE_HPP
 
 #include <rclcpp/rclcpp.hpp>
-#include <tello_msgs/msg/flight_data.hpp>
+#include "tello_msgs/msg/flight_data.hpp"
 #include <QApplication>
 #include <QWidget>
 #include <QLabel>
