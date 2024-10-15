@@ -21,6 +21,8 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(tello_msgs REQUIRED)
 
+set(DRONE_INFO_GUI_DEPS tello_msgs)
+
 include_directories(include ${rclcpp_INCLUDE_DIRS})
 add_executable(drone_info_gui_node src/drone_info_gui_node.cpp)
 target_link_libraries(drone_info_gui_node Qt5::Widgets)
