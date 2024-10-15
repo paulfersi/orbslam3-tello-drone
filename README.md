@@ -12,6 +12,15 @@ You have to install **asio**(asyncronous IO library) by running:
 sudo apt install libasio-dev
 ```
 
+#### To run the GUI
+
+the telemetry gui is made using tkinter and can be launched once the driver is up by typing:
+
+```
+ros2 run drone_info_gui drone_info_gui
+```
+
+
 
 ### For ORBSLAM3
 
@@ -30,7 +39,7 @@ cmake --build build
 
 cmake --build build -t pypangolin_pip_install
 
-```
+``` 
 
 #### Install Eigen3
 
@@ -47,5 +56,8 @@ sed -i 's/++11/++14/g' CMakeLists.txt
 ## Run monocular mode
 
 ros2 run orbslam3 mono orbslam_ros2/vocabulary/ORBvoc.txt orbslam3_ros2/config/monocular/TUM1.yaml
+
+
+
 
 
