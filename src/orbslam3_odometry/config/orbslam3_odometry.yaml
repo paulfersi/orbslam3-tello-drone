@@ -1,0 +1,64 @@
+/orbslam3_odometry: 
+  ros__parameters: 
+    # Topic for subscription
+    topic_camera_left: /camera/left_image
+    topic_camera_right: /camera/right_image
+    topic_imu: /imu/data  # will be ignored
+
+    # Topic for odometry pubblication
+    topic_orbslam_odometry: /Odometry/orbSlamOdom
+    topic_header_frame_id: fl_track
+    topic_child_frame_id: orbslam3
+
+    # ORB_SLAM3 mode. Poxibilities are:
+    #   mono
+    #   stereo
+    #   stereo_imu    # will be ignored
+    # Monocular mode will subscribe to topic_camera_left if topic_is_camera_left is true 
+    system_mode: stereo
+
+    
+    # For monocular version only. It indicates whether to subscribe to camera left or right topic for images. 
+    #   true    -> camera left's topic 
+    #   false   -> camera right
+    is_camera_left: true
+
+    # For monocular version only, since it has no depth info. It indicates the scale to multiply the calculated position (usually between 5 and 10)
+    # Da testare
+    scale_position_mono: 5
+
+    # For monocular version only. Degree to move the calculated pose. If 0 pose will not be changed.
+    degree_move_pose_mono: 10
+
+    # Cutting parameters (for both monocular and stereo). 
+    # Set how you want to crop your images before giving them to ORB-SLAM. The crop is perfomed like this:
+    #   cutting_rect = cv::Rect(cutting_x, cutting_y, cutting_width, cutting_height);
+    #   new_image = old_image(cutting_rect);
+    # if cutting_x is -1, the images will not be cropped.
+    cutting_x: 0
+    cutting_y: 200
+    cutting_width: 1280 
+    cutting_height: 450
+
+    # Visualizer of map created by ORBSLAM3 and images passed with ROS2. 
+    #   false to disable the visualizer
+    #   true to enable it
+    pangolin_visualization: true
+
+    # Full file path to vocabulary of ORB_SLAM3 
+    path_vocabulary: src/orbslam3_odometry/config/ORBvoc.txt
+
+    # Full file path to yaml settings (for ORB_SLAM3)
+    path_yaml_settings: /mnt/hgfs/cartella_condivisa/bag_26_05_24/basler_stereo_26_05_24_test.yaml
+    
+
+    # For stereo mode only. Doesn't make ORB_SLAM3 start (if true). It just shows the results of the stereo calibration with the params in the path_yaml_settings
+    just_check_stereo_calibration: false
+    
+    # Parameter to help you to take pictures. 
+    # true: take photo for calibration (press spacebar to take photo). Doesn't make ORB_SLAM3 start. 
+    # false: disable this functionality
+    just_take_picture: false
+    
+    
+
