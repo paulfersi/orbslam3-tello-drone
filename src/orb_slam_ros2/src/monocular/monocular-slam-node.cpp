@@ -1,11 +1,8 @@
 #include "monocular-slam-node.hpp"
 
 #include <opencv2/core/core.hpp>
-<<<<<<< HEAD
-=======
 #include <Eigen/Dense>    // Include Eigen header
 #include <Sophus/so3.hpp> // Include Sophus header
->>>>>>> 91a8575948262133e74cc40d9df3032e48a81136
 
 using std::placeholders::_1;
 
@@ -84,8 +81,8 @@ void MonocularSlamNode::GrabImage(const sensor_msgs::msg::Image::SharedPtr msg)
     }
 
     message.pose.pose = output_pose;
-    message.header.frame_id = header_id_frame; // Ensure these are defined in your class
-    message.child_frame_id = child_id_frame;   // Ensure these are defined in your class
+    message.header.frame_id = header_id_frame; 
+    message.child_frame_id = child_id_frame;  
 
     // Add timestamp to message
     message.header.stamp = this->now();
