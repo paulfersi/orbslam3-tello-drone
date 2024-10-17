@@ -4,8 +4,6 @@
 #include <chrono>
 
 #include "rclcpp/rclcpp.hpp"
-#include "stereo/stereo.hpp" //  TODO forse metti in include
-#include "stereo/just_check_stereo_calibration.cpp"
 #include "monocular/monocular.hpp"
 #include "System.h"
 #include <signal.h>
@@ -50,15 +48,6 @@ public:
 
         if (DEBUG)
             printDebug();
-        
-        if (just_check_stereo_calibration || just_take_picture){
-            RCLCPP_INFO(this->get_logger(), "CHECKING STEREO RECTIFICATION OR TAKING PICTURE. ORB-SLAM WILL NOT START");
-
-            auto node = std::make_shared<JustCheckStereoCalibration>(path_settings);
-            rclcpp::spin(node);
-            return;
-        } else 
-            RCLCPP_INFO(this->get_logger(), "NON CHECKING STEREO RECTIFICATION");
 
         if (system_mode == "mono")
         {
@@ -67,6 +56,7 @@ public:
             rclcpp::spin(node);
             return;
         }
+        /* 
         else if (system_mode == "stereo")
         {
             ORB_SLAM3::System pSLAM(path_vocabulary, path_settings, ORB_SLAM3::System::STEREO, pangolin_visualization);
@@ -74,6 +64,7 @@ public:
             rclcpp::spin(node);
             return;
         }
+        */
     }
 
 private:

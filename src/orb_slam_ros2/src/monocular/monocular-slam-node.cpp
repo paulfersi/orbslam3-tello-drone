@@ -2,7 +2,7 @@
 
 #include <opencv2/core/core.hpp>
 #include <Eigen/Dense>    // Include Eigen header
-#include <Sophus/so3.hpp> // Include Sophus header
+//#include <Sophus/so3.hpp> // Include Sophus header
 
 using std::placeholders::_1;
 

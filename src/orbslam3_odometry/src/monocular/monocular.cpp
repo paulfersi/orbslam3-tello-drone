@@ -193,11 +193,12 @@ void MonocularSlamNode::GrabImage(const ImageMsg::SharedPtr msg)
 
     quaternion_pub->publish(message);
 
+/* 
     // "End" time and saving times. File with times:
     std::chrono::steady_clock::time_point t2 = std::chrono::steady_clock::now();
     double tempo = std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1).count();
     m_SLAM->InsertTrackTime(tempo);
-
+*/
 
     #ifdef PUBLISH_POINT_CLOUD
 		// Point cloud pubblication

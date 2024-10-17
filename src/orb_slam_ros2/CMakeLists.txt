@@ -25,6 +25,7 @@ find_package(tf2_geometry_msgs REQUIRED)
 find_package(Pangolin REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(ORB_SLAM3 REQUIRED)
+find_package(nav_msgs REQUIRED)
 
 include_directories(
   include
@@ -40,13 +41,13 @@ add_executable(mono
   src/monocular/mono.cpp
   src/monocular/monocular-slam-node.cpp
 )
-ament_target_dependencies(mono rclcpp sensor_msgs cv_bridge ORB_SLAM3 Pangolin tf2_geometry_msgs Sophus Eigen3)
+ament_target_dependencies(mono rclcpp sensor_msgs cv_bridge ORB_SLAM3 Pangolin tf2_geometry_msgs Sophus Eigen3 nav_msgs)
 
 install(TARGETS mono
   DESTINATION lib/${PROJECT_NAME})
 
-install(DIRECTORY launch config vocabulary
-  DESTINATION share/${PROJECT_NAME}/)
+#install(DIRECTORY launch config vocabulary
+#  DESTINATION share/${PROJECT_NAME}/)
 
 ament_package()
 
