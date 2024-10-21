@@ -15,7 +15,7 @@
     #   stereo
     #   stereo_imu    # will be ignored
     # Monocular mode will subscribe to topic_camera_left if topic_is_camera_left is true 
-    system_mode: stereo
+    system_mode: mono
 
     
     # For monocular version only. It indicates whether to subscribe to camera left or right topic for images. 
@@ -49,7 +49,7 @@
     path_vocabulary: src/orbslam3_odometry/config/ORBvoc.txt
 
     # Full file path to yaml settings (for ORB_SLAM3)
-    path_yaml_settings: /mnt/hgfs/cartella_condivisa/bag_26_05_24/basler_stereo_26_05_24_test.yaml
+    path_yaml_settings: src/orbslam3_odometry/config/suca.yaml
     
 
     # For stereo mode only. Doesn't make ORB_SLAM3 start (if true). It just shows the results of the stereo calibration with the params in the path_yaml_settings

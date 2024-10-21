@@ -31,6 +31,7 @@ include_directories(
   include
   ${ORB_SLAM3_ROOT_DIR}/include
   ${ORB_SLAM3_ROOT_DIR}/include/CameraModels
+  ${Pangolin_INCLUDE_DIRS}
 )
 
 link_directories(
