@@ -29,13 +29,13 @@ public:
 
 private:
 
-    void GrabImage(const ImageMsg::SharedPtr msg);
+    void GrabImage(const sensor_msgs::msg::Image::SharedPtr msg);
 
     ORB_SLAM3::System* m_SLAM;
 
     cv_bridge::CvImagePtr m_cvImPtr;
 
-    rclcpp::Subscription<ImageMsg>::SharedPtr m_image_subscriber;
+    rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr m_image_subscriber;
     
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr quaternion_pub;
 

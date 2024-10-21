@@ -61,7 +61,7 @@ MonocularSlamNode::MonocularSlamNode(ORB_SLAM3::System *pSLAM)
 
     if (this->isCameraLeft)
     {
-        m_image_subscriber = this->create_subscription<ImageMsg>(
+        m_image_subscriber = this->create_subscription<sensor_msgs::msg::Image>(
             this->camera_left,
             qos,
             std::bind(&MonocularSlamNode::GrabImage, this, std::placeholders::_1));
@@ -73,7 +73,7 @@ MonocularSlamNode::MonocularSlamNode(ORB_SLAM3::System *pSLAM)
     }
     else
     {
-        m_image_subscriber = this->create_subscription<ImageMsg>(
+        m_image_subscriber = this->create_subscription<sensor_msgs::msg::Image>(
             this->camera_right,
             qos,
             std::bind(&MonocularSlamNode::GrabImage, this, std::placeholders::_1));
@@ -119,7 +119,7 @@ static std::string quaternionToString(const Eigen::Quaternionf &q)
 /**
  * Image callback
 */
-void MonocularSlamNode::GrabImage(const ImageMsg::SharedPtr msg)
+void MonocularSlamNode::GrabImage(const sensor_msgs::msg::Image::SharedPtr msg)
 {
     RCLCPP_INFO(this->get_logger(), "Sono nella callback");
     
@@ -129,7 +129,7 @@ void MonocularSlamNode::GrabImage(const ImageMsg::SharedPtr msg)
     // Copy the ros image message to cv::Mat.
     try
     {
-        // m_cvImPtr = cv_bridge::toCvShare(msg, "bgr8");  // For image
+        //m_cvImPtr = cv_bridge::toCvShare(msg, "bgr8");  // For image
         m_cvImPtr = cv_bridge::toCvCopy(msg, "bgr8");      // For compressed images
 
         // m_cvImPtr = cv_bridge::toCvCopy(msg); // Prima c'era questo
