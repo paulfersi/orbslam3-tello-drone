@@ -1,0 +1,39 @@
+%YAML:1.0
+---
+# Camera Parameters for ORB-SLAM3
+
+Camera.name: tello_camera
+
+# Camera resolution
+Camera.width: 960
+Camera.height: 720
+
+# Camera intrinsic parameters (fx, fy, cx, cy)
+Camera.fx: 921.170702
+Camera.fy: 919.018377
+Camera.cx: 459.904354
+Camera.cy: 351.238301
+
+# Distortion model: (k1, k2, p1, p2, k3)
+Camera.k1: -0.033458
+Camera.k2: 0.105152
+Camera.p1: 0.001256
+Camera.p2: -0.006647
+Camera.k3: 0.000000
+
+# Camera type: RGBD or Monocular (since Tello is Monocular)
+Camera.Type: "PinHole"
+
+# Use depth maps (set to false if using monocular SLAM)
+Camera.bf: 0.0  # For monocular, this is typically 0
+
+# ORB extractor parameters
+ORBextractor.nFeatures: 1000
+ORBextractor.scaleFactor: 1.2
+ORBextractor.nLevels: 8
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+# Mono-specific parameters
+ThDepth: 40.0
+DepthMapFactor: 1.0
