@@ -6,3 +6,4 @@ Log/*.txt
 INSTALL
 install/
 build/
+*.txt 
