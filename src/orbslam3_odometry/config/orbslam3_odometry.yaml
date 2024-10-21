@@ -1,8 +1,8 @@
 /orbslam3_odometry: 
   ros__parameters: 
     # Topic for subscription
-    topic_camera_left: /camera/left_image
-    topic_camera_right: /camera/right_image
+    topic_camera_left: /image_raw # raw image of tello cam
+    topic_camera_right: /camera/right_image #will be ignored
     topic_imu: /imu/data  # will be ignored
 
     # Topic for odometry pubblication
