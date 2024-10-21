@@ -1,8 +1,9 @@
-# orbslam3-tello-drone
+# orbslam3-tello-drone 
 
-Orbslam3 on a Ryze Tello drone using ROS2 
+## (WIP)
 
-The driver I used to use the drone with ros can be found here: https://github.com/clydemcqueen/tello_ros.git
+Orbslam3 on a Dji Tello drone using ROS2 
+
 
 The drone sends the frame to the computer that process it running ORB_SLAM in monocular mode.
 
@@ -50,14 +51,28 @@ BE CAREFUL when you build to the number of cores dedicated to the build(in the b
 
 I got issues with the c++ version. I had to change from the c++11 to 14 with the command: 
 
-````bash
+```bash
 sed -i 's/++11/++14/g' CMakeLists.txt
 ```
-## Run monocular mode
 
-ros2 run orbslam3 mono orbslam_ros2/vocabulary/ORBvoc.txt orbslam3_ros2/config/monocular/TUM1.yaml
+### Run monocular mode
 
+```bash
+# in the first terminal
+ros2 launch tello_driver teleop_launch.py
 
+# second terminal
 
+source install/setup.sh
 
+ros2 launch orbslam3_odometry orbslam_odometry_launch.py
 
+```
+
+Note: if the Pangolin visualizer says "waiting for image" it may not be detecting enough features in the image.
+
+### Sources 
+
+https://github.com/clydemcqueen/tello_ros.git 
+
+https://github.com/Il-castor/orbslam3-odometry
