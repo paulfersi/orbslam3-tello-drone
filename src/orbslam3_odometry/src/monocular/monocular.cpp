@@ -3,7 +3,7 @@
 #include <opencv2/core/core.hpp>
 
 // If defined, the pointcloud created by orbslam will be published
-#define PUBLISH_POINT_CLOUD
+//#define PUBLISH_POINT_CLOUD
 
 using std::placeholders::_1;
 
@@ -130,9 +130,9 @@ void MonocularSlamNode::GrabImage(const sensor_msgs::msg::Image::SharedPtr msg)
     try
     {
         //m_cvImPtr = cv_bridge::toCvShare(msg, "bgr8");  // For image
-        m_cvImPtr = cv_bridge::toCvCopy(msg, "bgr8");      // For compressed images
+        //m_cvImPtr = cv_bridge::toCvCopy(msg, "bgr8");      // For compressed images
 
-        // m_cvImPtr = cv_bridge::toCvCopy(msg); // Prima c'era questo
+        m_cvImPtr = cv_bridge::toCvCopy(msg); // Prima c'era questo
     }
     catch (cv_bridge::Exception &e)
     {

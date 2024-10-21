@@ -35,7 +35,7 @@
     #   cutting_rect = cv::Rect(cutting_x, cutting_y, cutting_width, cutting_height);
     #   new_image = old_image(cutting_rect);
     # if cutting_x is -1, the images will not be cropped.
-    cutting_x: 0
+    cutting_x: -1
     cutting_y: 200
     cutting_width: 1280 
     cutting_height: 450
