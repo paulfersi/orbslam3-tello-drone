@@ -6,4 +6,6 @@ Log/*.txt
 INSTALL
 install/
 build/
-*.txt 
+src/orbslam3_odometry/config/ORBvoc.txt 
+CameraTrajectory.txt
+KeyFrameTrajectory.txt
