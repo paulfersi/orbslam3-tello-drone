@@ -1,79 +1,85 @@
-#include "rclcpp/rclcpp.hpp"
-#include "sensor_msgs/msg/imu.hpp"
-#include "nav_msgs/msg/odometry.hpp"
+#include "imu_odometry_node.hpp"
 #include <cmath>
 
-class OdometryNode : public rclcpp::Node
+ImuOdometryNode::ImuOdometryNode()
+    : Node("imu_odometry_node"), x_(0.0), y_(0.0), theta_(0.0), vx_(0.0), vy_(0.0)
 {
-public:
-    OdometryNode() : Node("odometry_node"), x_(0.0), y_(0.0), theta_(0.0), vx_(0.0), vy_(0.0), vtheta_(0.0)
-    {
-        imu_sub_ = this->create_subscription<sensor_msgs::msg::Imu>(
-            "/imu", 10, std::bind(&OdometryNode::imu_callback, this, std::placeholders::_1));
+    flight_data_sub_ = this->create_subscription<tello_msgs::msg::FlightData>(
+        "/flight_data", 10, std::bind(&ImuOdometryNode::flight_data_callback, this, std::placeholders::_1));
 
-        odom_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("/odom", 10);
-    }
+    odom_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("/odom", 10);
+}
 
-private:
-    void imu_callback(const sensor_msgs::msg::Imu::SharedPtr msg)
-    {
-        // Assume time delta between messages (in seconds)
-        double dt = 0.1; // Replace this with actual delta time between IMU messages
+void ImuOdometryNode::flight_data_callback(const tello_msgs::msg::FlightData::SharedPtr msg)
+{
+    sensor_msgs::msg::Imu imu_msg;
+    imu_msg.header.stamp = this->now();
+    imu_msg.header.frame_id = "base_link";
 
-        // Convert angular velocity (from IMU) to change in orientation (theta)
-        double dtheta = msg->angular_velocity.z * dt;
-        theta_ += dtheta;
+    // Convert flight data (roll, pitch, yaw) to radians
+    double roll_rad = msg->roll * M_PI / 180.0;
+    double pitch_rad = msg->pitch * M_PI / 180.0;
+    double yaw_rad = msg->yaw * M_PI / 180.0;
 
-        // Linear acceleration (from IMU)
-        double ax = msg->linear_acceleration.x;
-        double ay = msg->linear_acceleration.y;
+    // Calculate quaternion from roll, pitch, and yaw
+    double cy = cos(yaw_rad * 0.5);
+    double sy = sin(yaw_rad * 0.5);
+    double cp = cos(pitch_rad * 0.5);
+    double sp = sin(pitch_rad * 0.5);
+    double cr = cos(roll_rad * 0.5);
+    double sr = sin(roll_rad * 0.5);
 
-        // Remove gravity from accelerometer data (assuming orientation is known)
-        // This part will need orientation estimation from the IMU quaternion
-        double accel_x_world = ax * cos(theta_) - ay * sin(theta_);
-        double accel_y_world = ax * sin(theta_) + ay * cos(theta_);
+    imu_msg.orientation.w = cr * cp * cy + sr * sp * sy;
+    imu_msg.orientation.x = sr * cp * cy - cr * sp * sy;
+    imu_msg.orientation.y = cr * sp * cy + sr * cp * sy;
+    imu_msg.orientation.z = cr * cp * sy - sr * sp * cy;
 
-        // Integrate acceleration to get velocity
-        vx_ += accel_x_world * dt;
-        vy_ += accel_y_world * dt;
+    // Linear acceleration
+    imu_msg.linear_acceleration.x = msg->agx / 1000.0;
+    imu_msg.linear_acceleration.y = msg->agy / 1000.0;
+    imu_msg.linear_acceleration.z = msg->agz / 1000.0;
 
-        // Integrate velocity to get position
-        x_ += vx_ * dt;
-        y_ += vy_ * dt;
+    // Assume time delta between messages (in seconds)
+    double dt = 0.1; // Adjust this based on actual message frequency
 
-        // Publish odometry
-        nav_msgs::msg::Odometry odom_msg;
-        odom_msg.header.stamp = this->now();
-        odom_msg.header.frame_id = "odom";
-        odom_msg.child_frame_id = "base_link";
+    // Calculate angular velocity change (yaw rate only, based on z-axis)
+    double dtheta = imu_msg.angular_velocity.z * dt;
+    theta_ += dtheta;
 
-        // Position
-        odom_msg.pose.pose.position.x = x_;
-        odom_msg.pose.pose.position.y = y_;
-        odom_msg.pose.pose.position.z = 0.0;
+    // Remove gravity effect from acceleration data
+    double accel_x_world = imu_msg.linear_acceleration.x * cos(theta_) - imu_msg.linear_acceleration.y * sin(theta_);
+    double accel_y_world = imu_msg.linear_acceleration.x * sin(theta_) + imu_msg.linear_acceleration.y * cos(theta_);
 
-        // Orientation (from IMU)
-        odom_msg.pose.pose.orientation = msg->orientation;
+    // Integrate acceleration to get velocity
+    vx_ += accel_x_world * dt;
+    vy_ += accel_y_world * dt;
 
-        // Velocity
-        odom_msg.twist.twist.linear.x = vx_;
-        odom_msg.twist.twist.linear.y = vy_;
-        odom_msg.twist.twist.angular.z = msg->angular_velocity.z;
+    // Integrate velocity to get position
+    x_ += vx_ * dt;
+    y_ += vy_ * dt;
 
-        odom_pub_->publish(odom_msg);
-    }
+    nav_msgs::msg::Odometry odom_msg;
+    odom_msg.header.stamp = this->now();
+    odom_msg.header.frame_id = "odom";
+    odom_msg.child_frame_id = "base_link";
 
-    rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_sub_;
-    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_pub_;
+    odom_msg.pose.pose.position.x = x_;
+    odom_msg.pose.pose.position.y = y_;
+    odom_msg.pose.pose.position.z = 0.0;
 
-    double x_, y_, theta_;    // Position and orientation
-    double vx_, vy_, vtheta_; // Velocities
-};
+    odom_msg.pose.pose.orientation = imu_msg.orientation;
+
+    odom_msg.twist.twist.linear.x = vx_;
+    odom_msg.twist.twist.linear.y = vy_;
+    odom_msg.twist.twist.angular.z = imu_msg.angular_velocity.z;
+
+    odom_pub_->publish(odom_msg);
+}
 
 int main(int argc, char **argv)
 {
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<OdometryNode>());
+    rclcpp::spin(std::make_shared<ImuOdometryNode>());
     rclcpp::shutdown();
     return 0;
 }
