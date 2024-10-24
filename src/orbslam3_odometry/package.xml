@@ -11,14 +11,17 @@
   <buildtool_depend>sensor_msgs</buildtool_depend>
   <buildtool_depend>cv_bridge</buildtool_depend>
   <buildtool_depend>message_filters</buildtool_depend>
+  <build_depend>tf2_ros</build_depend>
+  <build_depend>geometry_msgs</build_depend> 
   
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>message_filters</exec_depend>
-
   <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend> 
 
   
   <exec_depend>ros2launch</exec_depend>

@@ -29,6 +29,9 @@ find_package(yaml-cpp REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(image_transport REQUIRED) 
 
+find_package(tf2_ros REQUIRED)       
+find_package(geometry_msgs REQUIRED) 
+
 
 include_directories(
   include
@@ -44,7 +47,7 @@ add_executable(orbslam3_odometry
   src/monocular/monocular.cpp
   src/main_node.cpp
 )
-ament_target_dependencies(orbslam3_odometry rclcpp sensor_msgs cv_bridge message_filters ORB_SLAM3 Pangolin nav_msgs yaml-cpp)
+ament_target_dependencies(orbslam3_odometry rclcpp sensor_msgs cv_bridge message_filters ORB_SLAM3 Pangolin nav_msgs yaml-cpp tf2_ros geometry_msgs)
 
 
 install(TARGETS orbslam3_odometry DESTINATION lib/${PROJECT_NAME})

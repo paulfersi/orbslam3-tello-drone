@@ -15,6 +15,7 @@
 #include "std_msgs/msg/string.hpp"
 #include "nav_msgs/msg/odometry.hpp"
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
+#include <tf2_ros/transform_broadcaster.h> // Include for the TransformBroadcaster
 #include "sensor_msgs/msg/compressed_image.hpp"
 
 #include "sensor_msgs/msg/point_cloud2.hpp"
@@ -23,26 +24,25 @@
 class MonocularSlamNode : public rclcpp::Node
 {
 public:
-    MonocularSlamNode(ORB_SLAM3::System* pSLAM);
+    MonocularSlamNode(ORB_SLAM3::System *pSLAM);
 
     ~MonocularSlamNode();
 
 private:
-
     void GrabImage(const sensor_msgs::msg::Image::SharedPtr msg);
 
-    ORB_SLAM3::System* m_SLAM;
+    ORB_SLAM3::System *m_SLAM;
 
     cv_bridge::CvImagePtr m_cvImPtr;
 
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr m_image_subscriber;
-    
+
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr quaternion_pub;
 
     void loadParameters();
     /*List of all parameters */
-    std::string camera_left, camera_right, imu, header_id_frame, child_id_frame; 
-    std::string topic_pub_quat; 
+    std::string camera_left, camera_right, imu, header_id_frame, child_id_frame;
+    std::string topic_pub_quat;
     bool isCameraLeft;
     int scale_position_mono;
     int degree_move_pose_mono;
@@ -52,11 +52,13 @@ private:
     cv::Rect cutting_rect;
 
     // Point cloud and Key points varables/methods
-    std::vector<float> depths ;
-    sensor_msgs::msg::PointCloud2 mappoint_to_pointcloud(std::vector<ORB_SLAM3::MapPoint*> map_points, rclcpp::Time msg_time, Eigen::Vector3f actualPosition) ;
+    std::vector<float> depths;
+    sensor_msgs::msg::PointCloud2 mappoint_to_pointcloud(std::vector<ORB_SLAM3::MapPoint *> map_points, rclcpp::Time msg_time, Eigen::Vector3f actualPosition);
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr publisherPointCloud;
-    cv::Scalar interpolateColor(float value, float minDepth, float maxDepth) ;
+    cv::Scalar interpolateColor(float value, float minDepth, float maxDepth);
 
+    // Transform broadcaster for publishing the transformations
+    std::shared_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
 };
 
 #endif
