@@ -3,7 +3,7 @@
     # Topic for subscription
     topic_camera_left: /image_raw # raw image of tello cam
     topic_camera_right: /camera/right_image #will be ignored
-    topic_imu: /imu/data  # will be ignored
+    topic_imu: /imu/data  # only in mono_inertial
 
     # Topic for odometry pubblication
     topic_orbslam_odometry: /Odometry/orbSlamOdom
@@ -12,10 +12,9 @@
 
     # ORB_SLAM3 mode. Poxibilities are:
     #   mono
-    #   stereo
-    #   stereo_imu    # will be ignored
+    #   mono_inertial
     # Monocular mode will subscribe to topic_camera_left if topic_is_camera_left is true 
-    system_mode: mono
+    system_mode: mono_inertial
 
     
     # For monocular version only. It indicates whether to subscribe to camera left or right topic for images. 
