@@ -6,7 +6,7 @@ ImuPublisherNode::ImuPublisherNode() : Node("imu_publisher_node")
     flight_data_sub_ = this->create_subscription<tello_msgs::msg::FlightData>(
         "/flight_data", 10, std::bind(&ImuPublisherNode::flight_data_callback, this, std::placeholders::_1));
 
-    imu_pub_ = this->create_publisher<sensor_msgs::msg::Imu>("/imu", 10);
+    imu_pub_ = this->create_publisher<sensor_msgs::msg::Imu>("/imu/data", 10);
 }
 
 void ImuPublisherNode::flight_data_callback(const tello_msgs::msg::FlightData::SharedPtr msg)

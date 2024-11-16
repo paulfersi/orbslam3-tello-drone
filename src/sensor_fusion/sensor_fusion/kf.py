@@ -1,5 +1,9 @@
 import numpy as np
 
+"""
+Basic Kalman Filter implementation
+"""
+
 class KF:
     def __init__(self,initial_x: float,
                  initial_v: float,
