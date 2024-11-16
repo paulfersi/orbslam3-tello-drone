@@ -24,7 +24,7 @@ find_package(tello_msgs REQUIRED)
 add_executable(imu_publisher
   src/imu_publisher_node.cpp
 )
-ament_target_dependencies(imu_publisher rclcpp sensor_msgs nav_msgs tello_msgs)
+ament_target_dependencies(imu_publisher rclcpp sensor_msgs tello_msgs)
 
 
 install(TARGETS imu_publisher DESTINATION lib/${PROJECT_NAME})
