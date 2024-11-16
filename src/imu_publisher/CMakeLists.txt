@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(imu_odometry)
+project(imu_publisher)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -21,12 +21,12 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tello_msgs REQUIRED) 
 
-add_executable(imu_odometry
-  src/imu_odometry_node.cpp
+add_executable(imu_publisher
+  src/imu_publisher_node.cpp
 )
-ament_target_dependencies(imu_odometry rclcpp sensor_msgs nav_msgs tello_msgs)
+ament_target_dependencies(imu_publisher rclcpp sensor_msgs nav_msgs tello_msgs)
 
 
-install(TARGETS imu_odometry DESTINATION lib/${PROJECT_NAME})
+install(TARGETS imu_publisher DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
