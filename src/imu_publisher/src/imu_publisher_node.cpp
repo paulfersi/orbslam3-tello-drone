@@ -1,8 +1,7 @@
 #include "imu_publisher_node.hpp"
 #include <cmath>
 
-ImuPublisherNode::ImuPublisherNode()
-    : Node("imu_publisher_node"), x_(0.0), y_(0.0), theta_(0.0), vx_(0.0), vy_(0.0)
+ImuPublisherNode::ImuPublisherNode() : Node("imu_publisher_node")
 {
     flight_data_sub_ = this->create_subscription<tello_msgs::msg::FlightData>(
         "/flight_data", 10, std::bind(&ImuPublisherNode::flight_data_callback, this, std::placeholders::_1));
@@ -22,7 +21,7 @@ void ImuPublisherNode::flight_data_callback(const tello_msgs::msg::FlightData::S
     double yaw_rad = msg->yaw * M_PI / 180.0;
 
     /* ------- Calculate quaternion --------- */
-    
+
     // yaw
     double cy = cos(yaw_rad * 0.5);
     double sy = sin(yaw_rad * 0.5);
