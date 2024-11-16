@@ -1,16 +1,16 @@
-#include "imu_odometry_node.hpp"
+#include "imu_publisher_node.hpp"
 #include <cmath>
 
-ImuOdometryNode::ImuOdometryNode()
-    : Node("imu_odometry_node"), x_(0.0), y_(0.0), theta_(0.0), vx_(0.0), vy_(0.0)
+ImuPublisherNode::ImuPublisherNode()
+    : Node("imu_publisher_node"), x_(0.0), y_(0.0), theta_(0.0), vx_(0.0), vy_(0.0)
 {
     flight_data_sub_ = this->create_subscription<tello_msgs::msg::FlightData>(
-        "/flight_data", 10, std::bind(&ImuOdometryNode::flight_data_callback, this, std::placeholders::_1));
+        "/flight_data", 10, std::bind(&ImuPublisherNode::flight_data_callback, this, std::placeholders::_1));
 
     imu_pub_ = this->create_publisher<sensor_msgs::msg::Imu>("/imu", 10);
 }
 
-void ImuOdometryNode::flight_data_callback(const tello_msgs::msg::FlightData::SharedPtr msg)
+void ImuPublisherNode::flight_data_callback(const tello_msgs::msg::FlightData::SharedPtr msg)
 {
     sensor_msgs::msg::Imu imu_msg;
     imu_msg.header.stamp = this->now();
@@ -49,7 +49,7 @@ void ImuOdometryNode::flight_data_callback(const tello_msgs::msg::FlightData::Sh
 int main(int argc, char **argv)
 {
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<ImuOdometryNode>());
+    rclcpp::spin(std::make_shared<ImuPublisherNode>());
     rclcpp::shutdown();
     return 0;
 }
