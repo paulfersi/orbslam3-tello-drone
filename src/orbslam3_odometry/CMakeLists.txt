@@ -47,6 +47,7 @@ add_executable(orbslam3_odometry
   src/monocular/monocular.cpp
   src/main_node.cpp
 )
+
 ament_target_dependencies(orbslam3_odometry rclcpp sensor_msgs cv_bridge message_filters ORB_SLAM3 Pangolin nav_msgs yaml-cpp tf2_ros geometry_msgs)
 
 
