@@ -71,6 +71,13 @@ ros2 launch orbslam3_odometry orbslam_odometry_launch.py
 
 Note: if the Pangolin visualizer says "waiting for image" it may not be detecting enough features in the image.
 
+## Others
+
+- to view imu data in rviz2:
+```sudo apt install ros-foxy-imu-tools```
+
+Don't forget to set Fixed Frame as "base_link"
+
 ### Sources 
 
 https://github.com/clydemcqueen/tello_ros.git 

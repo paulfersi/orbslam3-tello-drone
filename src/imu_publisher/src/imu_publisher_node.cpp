@@ -7,6 +7,8 @@ ImuPublisherNode::ImuPublisherNode() : Node("imu_publisher_node")
         "/flight_data", 10, std::bind(&ImuPublisherNode::flight_data_callback, this, std::placeholders::_1));
 
     imu_pub_ = this->create_publisher<sensor_msgs::msg::Imu>("/imu/data", 10);
+
+    RCLCPP_INFO(this->get_logger(),"Imu node started \n");
 }
 
 void ImuPublisherNode::flight_data_callback(const tello_msgs::msg::FlightData::SharedPtr msg)
@@ -43,6 +45,7 @@ void ImuPublisherNode::flight_data_callback(const tello_msgs::msg::FlightData::S
     imu_msg.linear_acceleration.z = msg->agz / 1000.0;
 
     imu_pub_->publish(imu_msg);
+    RCLCPP_INFO(this->get_logger(),"Imu msg sent \n");
 }
 
 int main(int argc, char **argv)
