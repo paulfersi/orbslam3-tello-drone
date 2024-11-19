@@ -37,6 +37,7 @@ include_directories(
   include
   ${ORB_SLAM3_ROOT_DIR}/include
   ${ORB_SLAM3_ROOT_DIR}/include/CameraModels
+  ${Pangolin_INCLUDE_DIRS}
 )
 
 link_directories(
@@ -45,7 +46,6 @@ link_directories(
 
 add_executable(orbslam3_odometry
   src/monocular/monocular.cpp
-  src/mono-inertial/monocular_intertial.cpp
   src/main_node.cpp
 )
 

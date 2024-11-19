@@ -14,7 +14,7 @@
     #   mono
     #   mono_inertial
     # Monocular mode will subscribe to topic_camera_left if topic_is_camera_left is true 
-    system_mode: mono_inertial
+    system_mode: mono
 
     
     # For monocular version only. It indicates whether to subscribe to camera left or right topic for images. 
