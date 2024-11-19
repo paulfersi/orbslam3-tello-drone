@@ -45,6 +45,7 @@ link_directories(
 
 add_executable(orbslam3_odometry
   src/monocular/monocular.cpp
+  src/mono-inertial/monocular_intertial.cpp
   src/main_node.cpp
 )
 
