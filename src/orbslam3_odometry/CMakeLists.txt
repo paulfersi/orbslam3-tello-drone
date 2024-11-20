@@ -28,6 +28,7 @@ find_package(nav_msgs REQUIRED)
 find_package(yaml-cpp REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(image_transport REQUIRED) 
+find_package(PCL REQUIRED) 
 
 find_package(tf2_ros REQUIRED)       
 find_package(geometry_msgs REQUIRED) 
@@ -38,6 +39,7 @@ include_directories(
   ${ORB_SLAM3_ROOT_DIR}/include
   ${ORB_SLAM3_ROOT_DIR}/include/CameraModels
   ${Pangolin_INCLUDE_DIRS}
+  ${PCL_INCLUDE_DIRS}
 )
 
 link_directories(
@@ -50,6 +52,8 @@ add_executable(orbslam3_odometry
 )
 
 ament_target_dependencies(orbslam3_odometry rclcpp sensor_msgs cv_bridge message_filters ORB_SLAM3 Pangolin nav_msgs yaml-cpp tf2_ros geometry_msgs)
+
+target_link_libraries(orbslam3_odometry ${PCL_LIBRARIES})
 
 
 install(TARGETS orbslam3_odometry DESTINATION lib/${PROJECT_NAME})

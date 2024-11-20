@@ -4,7 +4,7 @@
 #include <geometry_msgs/msg/transform_stamped.hpp>
 
 // If defined, the pointcloud created by ORB-SLAM will be published
-// #define PUBLISH_POINT_CLOUD
+#define PUBLISH_POINT_CLOUD
 
 using std::placeholders::_1;
 
@@ -212,12 +212,116 @@ void MonocularSlamNode::GrabImage(const sensor_msgs::msg::Image::SharedPtr msg)
         m_SLAM->InsertTrackTime(tempo);
     */
 
-#ifdef PUBLISH_POINT_CLOUD
-    // Point cloud publication
-    RCLCPP_INFO(this->get_logger(), "before m_SLAM->mpPointCloudDrawer");
-    pcl::PointCloud<pcl::PointXYZRGBA> pointCloud = m_SLAM->mpPointCloudDrawer->GetAllMapPoints();
-    RCLCPP_INFO(this->get_logger(), "pointCloud contains %ld points", pointCloud.points.size());
-    sensor_msgs::msg::PointCloud2 pointcloud_msg = Utility::createPointCloudMsg(pointCloud);
-    publisherPointCloud->publish(pointcloud_msg);
-#endif
+
+    #ifdef PUBLISH_POINT_CLOUD
+		// Point cloud pubblication
+		RCLCPP_INFO(this->get_logger(), "prima del mappiont to pointcloud");
+		// depths.clear();
+		sensor_msgs::msg::PointCloud2 cloud = mappoint_to_pointcloud( m_SLAM->GetTrackedMapPoints(), message.header.stamp, twc);
+		publisherPointCloud->publish(cloud);
+		RCLCPP_INFO(this->get_logger(), "dopo il mappiont to pointcloud");
+    
+    	// Tracked points showing is currently disabled...
+		std::vector<cv::KeyPoint> keypoints = m_SLAM->GetTrackedKeyPointsUn();
+		std::cout << "Size key point: " << keypoints.size() << std::endl;
+		
+		// Remove this code to enable it 
+		float minDepth = *std::min_element(depths.begin(), depths.end());
+		float maxDepth = *std::max_element(depths.begin(), depths.end());
+
+		for (size_t i = 0; i < keypoints.size(); ++i) {
+		   cv::Point2f point = keypoints[i].pt;
+		//    float depth = depths[i];
+		//    cv::Scalar color = interpolateColor(depth, minDepth, maxDepth);
+            cv::Vec3b color(0, 0, 255);
+		   cv::circle(image_for_orbslam, point, 3, color, cv::FILLED);
+		}
+		
+		
+		
+		cv::imshow("Keypoints", image_for_orbslam);
+		cv::waitKey(1);
+	#endif
+}
+
+
+
+// Key point color interpolation
+cv::Scalar MonocularSlamNode::interpolateColor(float value, float minDepth, float maxDepth) { 
+	// Doesn't working
+    float range = maxDepth - minDepth;
+    float normalized = (value - minDepth) / range;
+
+    // Cold color (blue)
+    cv::Vec3b coldColor(255, 0, 0);
+    // Warm color (red)
+    cv::Vec3b warmColor(0, 0, 255);
+
+    cv::Vec3b color = (1 - normalized) * coldColor + normalized * warmColor;
+    return cv::Scalar(color[0], color[1], color[2]);
+}
+
+// Converter from MapPoint to Point Cloud  
+sensor_msgs::msg::PointCloud2 MonocularSlamNode::mappoint_to_pointcloud(std::vector<ORB_SLAM3::MapPoint*> map_points, rclcpp::Time msg_time, Eigen::Vector3f actualPosition) {
+
+    const int num_channels = 3; // x y z
+
+    if (map_points.size() == 0)
+    {
+        std::cout << "Map point vector is empty!" << std::endl;
+    }
+
+    sensor_msgs::msg::PointCloud2 cloud;
+
+    cloud.header.stamp = msg_time;
+    cloud.header.frame_id = "velodyne";	// So it can be shown with lidar's velodyne
+    cloud.height = 1;
+    cloud.width = map_points.size();
+    std::cout << "Size map point: " << map_points.size() << std::endl;
+    cloud.is_bigendian = false;
+    cloud.is_dense = true;
+    cloud.point_step = num_channels * sizeof(float);
+    cloud.row_step = cloud.point_step * cloud.width;
+    cloud.fields.resize(num_channels);
+
+    std::string channel_id[] = { "x", "y", "z"};
+
+    for (int i = 0; i < num_channels; i++)
+    {
+        cloud.fields[i].name = channel_id[i];
+        cloud.fields[i].offset = i * sizeof(float);
+        cloud.fields[i].count = 1;
+        cloud.fields[i].datatype = sensor_msgs::msg::PointField::FLOAT32;
+    }
+
+    cloud.data.resize(cloud.row_step * cloud.height);
+
+    unsigned char *cloud_data_ptr = &(cloud.data[0]);
+
+    
+
+    for (unsigned int i = 0; i < cloud.width; i++)
+    {
+        if (map_points[i])
+        {
+            
+            //map_points[i]->SetWorldPos(vectorWorldPos );
+            //Eigen::Vector3f tmp = map_points[i]->GetWorldPos();
+            //std::cout << "Vector world pos: " << tmp.x() << " " << tmp.y() << " " << tmp.z() << std::endl;  
+            Eigen::Vector3d P3Dw = map_points[i]->GetWorldPos().cast<double>();
+
+            tf2::Vector3 point_translation(P3Dw.x()-actualPosition.x(), P3Dw.y()-actualPosition.y(), P3Dw.z()-actualPosition.z());
+
+            float data_array[num_channels] = {
+                point_translation.z()*this->scale_position_mono,
+                -point_translation.x()*this->scale_position_mono,
+                -point_translation.y()*this->scale_position_mono
+            };
+            
+            depths.push_back(data_array[0]);
+
+            memcpy(cloud_data_ptr+(i*cloud.point_step), data_array, num_channels*sizeof(float));
+        }
+    }
+    return cloud;
 }
