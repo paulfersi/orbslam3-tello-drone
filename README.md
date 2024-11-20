@@ -81,6 +81,8 @@ Note: if the Pangolin visualizer says "waiting for image" it may not be detectin
 
 Don't forget to set Fixed Frame as "base_link"
 
+For orbslam3 the Fixed Frame is "orbslam3"
+
 for octomap
 
 - sudo apt install ros-foxy-octomap

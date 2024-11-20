@@ -238,9 +238,9 @@ void MonocularSlamNode::GrabImage(const sensor_msgs::msg::Image::SharedPtr msg)
 		}
 		
 		
-		
-		cv::imshow("Keypoints", image_for_orbslam);
-		cv::waitKey(1);
+		/* To show keypoints on the image */
+		//cv::imshow("Keypoints", image_for_orbslam);
+		//cv::waitKey(1);
 	#endif
 }
 
@@ -274,7 +274,7 @@ sensor_msgs::msg::PointCloud2 MonocularSlamNode::mappoint_to_pointcloud(std::vec
     sensor_msgs::msg::PointCloud2 cloud;
 
     cloud.header.stamp = msg_time;
-    cloud.header.frame_id = "velodyne";	// So it can be shown with lidar's velodyne
+    cloud.header.frame_id = "orbslam3";	
     cloud.height = 1;
     cloud.width = map_points.size();
     std::cout << "Size map point: " << map_points.size() << std::endl;
