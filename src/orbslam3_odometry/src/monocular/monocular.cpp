@@ -160,8 +160,8 @@ void MonocularSlamNode::GrabImage(const sensor_msgs::msg::Image::SharedPtr msg)
 
     // Multiplying is necessary in monocular mode, since there is no depth info
     output_pose.position.x = twc.z() * this->scale_position_mono;
-    output_pose.position.y = -twc.x() * this->scale_position_mono;
-    output_pose.position.z = 0;
+    output_pose.position.y = twc.x() * this->scale_position_mono;
+    output_pose.position.z = twc.y() * this->scale_position_mono;
 
     output_pose.orientation.x = -q.z();
     output_pose.orientation.y = -q.x();
