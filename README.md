@@ -2,7 +2,7 @@
 
 ## (WIP)
 
-Orbslam3 on a Dji Tello drone using ROS2 
+Orbslam3 on a Dji Tello drone using ROS2
 
 <p align="center">
   <img src="/docs/nodes_structure_drone.png" width="700">
