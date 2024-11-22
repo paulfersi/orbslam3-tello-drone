@@ -83,11 +83,16 @@ Don't forget to set Fixed Frame as "base_link"
 
 For orbslam3 the Fixed Frame is "orbslam3"
 
-for octomap
+-> for octomap
 
 - sudo apt install ros-foxy-octomap
 - sudo apt install ros-foxy-octomap-msgs
 - sudo apt install ros-foxy-pcl-ros
+
+
+-> for gazebo
+pip install transformations + requirements of tello_gazebo
+
 
 ### Sources 
 
