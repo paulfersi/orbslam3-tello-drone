@@ -2,7 +2,7 @@
 
 ## (WIP)
 
-Orbslam3 on a Dji Tello drone using ROS2 
+Orbslam3 on a Dji Tello drone using ROS2
 
 <p align="center">
   <img src="/docs/nodes_structure_drone.png" width="700">
@@ -99,3 +99,5 @@ pip install transformations + requirements of tello_gazebo
 https://github.com/clydemcqueen/tello_ros.git 
 
 https://github.com/Il-castor/orbslam3-odometry
+
+https://github.com/OctoMap/octomap_mapping
