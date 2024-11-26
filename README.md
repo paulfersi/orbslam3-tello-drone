@@ -91,7 +91,7 @@ For orbslam3 the Fixed Frame is "orbslam3"
 
 
 -> for gazebo
-pip install transformations + requirements of tello_gazebo
+```pip install transformations``` + requirements of tello_gazebo
 
 
 ### Sources 
