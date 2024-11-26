@@ -90,8 +90,18 @@ For orbslam3 the Fixed Frame is "orbslam3"
 - sudo apt install ros-foxy-pcl-ros
 
 
+## Simulation
+
+to launch:
+
+```ros2 launch tello_gazebo simple_launch.py```
+
+Examples of commands to teleop the drone are in *sim_teleop* folder
+
 -> for gazebo
 ```pip install transformations``` + requirements of tello_gazebo
+
+```sudo apt install ros-foxy-gazebo-plugins```
 
 
 ### Sources 
