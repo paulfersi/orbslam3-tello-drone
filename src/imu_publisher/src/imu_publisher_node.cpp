@@ -47,6 +47,16 @@ void ImuPublisherNode::flight_data_callback(const tello_msgs::msg::FlightData::S
     imu_msg.orientation.y = cr * sp * cy + sr * cp * sy;
     imu_msg.orientation.z = cr * cp * sy - sr * sp * cy;
 
+    double norm = sqrt(pow(imu_msg.orientation.w,2)+
+                        pow(imu_msg.orientation.x,2)+
+                        pow(imu_msg.orientation.y,2)+
+                        pow(imu_msg.orientation.z,2));
+
+    imu_msg.orientation.w /= norm;
+    imu_msg.orientation.x /=norm;
+    imu_msg.orientation.y /= norm;
+    imu_msg.orientation.z /=norm;
+
     // Linear acceleration
     imu_msg.linear_acceleration.x = msg->agx / 1000.0;
     imu_msg.linear_acceleration.y = msg->agy / 1000.0;
@@ -97,7 +107,7 @@ void ImuPublisherNode::publish_tf(nav_msgs::msg::Odometry odom_msg){
 
     transform.header.stamp = odom_msg.header.stamp;
     transform.header.frame_id = "map";
-    transform.child_frame_id = "imu_odom";
+    transform.child_frame_id = "imu";
 
     transform.transform.translation.x = odom_msg.pose.pose.position.x; 
     transform.transform.translation.y = odom_msg.pose.pose.position.y; 
