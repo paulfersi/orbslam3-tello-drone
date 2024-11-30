@@ -15,6 +15,7 @@ public:
 
 private:
     void flight_data_callback(const tello_msgs::msg::FlightData::SharedPtr msg);
+    void compute_position(sensor_msgs::msg::Imu imu_msg);
 
     rclcpp::Subscription<tello_msgs::msg::FlightData>::SharedPtr flight_data_sub_;
     rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_pub_;
@@ -25,4 +26,5 @@ private:
 
     auto last_time, new_time;
 
+}
 #endif // IMU_PUBLISHER_NODE_HPP

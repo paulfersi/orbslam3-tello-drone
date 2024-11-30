@@ -9,7 +9,9 @@ ImuPublisherNode::ImuPublisherNode() : Node("imu_publisher_node")
     imu_pub_ = this->create_publisher<sensor_msgs::msg::Imu>("/imu/data", 10);
     odometry_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("/odom", 10);
 
-    position_x, position_y, position_z = 0.0;
+    position_x = 0.0;
+    position_y = 0.0;
+    position_z = 0.0;
 
     last_time = std::chrono::high_resolution_clock::now();
 
@@ -49,7 +51,7 @@ void ImuPublisherNode::flight_data_callback(const tello_msgs::msg::FlightData::S
     imu_msg.linear_acceleration.y = msg->agy / 1000.0;
     imu_msg.linear_acceleration.z = msg->agz / 1000.0;
 
-    compute_position(imu_msg)
+    compute_position(imu_msg);
     imu_pub_->publish(imu_msg);
     RCLCPP_INFO(this->get_logger(),"Imu msg sent \n");
 }
