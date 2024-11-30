@@ -8,6 +8,12 @@ Orbslam3 on a Dji Tello drone using ROS2
   <img src="/docs/nodes_structure_drone.png" width="700">
 </p>
 
+Simplified version
+
+<p align="center">
+  <img src="/docs/simplified_structure.jpg" width="700">
+</p>
+
 The drone sends the frame to the computer that process it running ORB_SLAM in monocular mode(or monocular-inertial or monocular-D-intertial)
 
 You have to install **asio**(asyncronous IO library) by running:
