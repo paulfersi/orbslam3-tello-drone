@@ -7,7 +7,7 @@ ImuPublisherNode::ImuPublisherNode() : Node("imu_publisher_node")
         "/flight_data", 10, std::bind(&ImuPublisherNode::flight_data_callback, this, std::placeholders::_1));
 
     imu_pub_ = this->create_publisher<sensor_msgs::msg::Imu>("/imu/data", 10);
-    odometry_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("/odom", 10);
+    odometry_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("/Odometry/imuOdom", 10);
 
     tf_broadcaster_ = std::make_shared<tf2_ros::TransformBroadcaster>(this);
 
@@ -23,7 +23,7 @@ void ImuPublisherNode::flight_data_callback(const tello_msgs::msg::FlightData::S
 {
     sensor_msgs::msg::Imu imu_msg;
     imu_msg.header.stamp = this->now();
-    imu_msg.header.frame_id = "imu";
+    imu_msg.header.frame_id = "map";
 
     // Convert flight data (roll, pitch, yaw) to radians
     double roll_rad = msg->roll * M_PI / 180.0;
@@ -76,7 +76,7 @@ void ImuPublisherNode::compute_position(sensor_msgs::msg::Imu imu_msg){
 
     nav_msgs::msg::Odometry odom_msg;
     odom_msg.header.stamp = imu_msg.header.stamp;
-    odom_msg.header.frame_id = "odom";
+    odom_msg.header.frame_id = "map";
 
     odom_msg.pose.pose.position.x = position_x;
     odom_msg.pose.pose.position.y = position_y;
@@ -93,11 +93,11 @@ void ImuPublisherNode::compute_position(sensor_msgs::msg::Imu imu_msg){
 }
 
 void ImuPublisherNode::publish_tf(nav_msgs::msg::Odometry odom_msg){
-    std::geometry_msgs::msg::TransformStamped transform;
+    geometry_msgs::msg::TransformStamped transform;
 
     transform.header.stamp = odom_msg.header.stamp;
     transform.header.frame_id = "map";
-    transform.child_frame_id = "imu_odom"
+    transform.child_frame_id = "imu_odom";
 
     transform.transform.translation.x = odom_msg.pose.pose.position.x; 
     transform.transform.translation.y = odom_msg.pose.pose.position.y; 

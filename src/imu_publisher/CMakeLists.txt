@@ -32,4 +32,9 @@ ament_target_dependencies(imu_publisher rclcpp sensor_msgs tello_msgs nav_msgs t
 
 install(TARGETS imu_publisher DESTINATION lib/${PROJECT_NAME})
 
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}
+)
+
 ament_package()
