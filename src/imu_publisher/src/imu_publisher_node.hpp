@@ -18,10 +18,9 @@ private:
 
     rclcpp::Subscription<tello_msgs::msg::FlightData>::SharedPtr flight_data_sub_;
     rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_pub_;
-    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odometry_pub_
+    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odometry_pub_;
 
-        double position_x,
-        position_y, position_z;
+    double position_x,position_y, position_z;
     double velocity_x, velocity_y,velocity_z;
 
     auto last_time, new_time;
