@@ -4,6 +4,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "tello_msgs/msg/flight_data.hpp"
 #include "sensor_msgs/msg/imu.hpp"
+#include "nav_msgs/msg/odometry.hpp"
 #include <chrono>
 
 
@@ -17,11 +18,12 @@ private:
 
     rclcpp::Subscription<tello_msgs::msg::FlightData>::SharedPtr flight_data_sub_;
     rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_pub_;
-    
-    double position_x, position_y, position_z;
+    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odometry_pub_
+
+        double position_x,
+        position_y, position_z;
+    double velocity_x, velocity_y,velocity_z;
 
     auto last_time, new_time;
-
-    double dt;
 
 #endif // IMU_PUBLISHER_NODE_HPP

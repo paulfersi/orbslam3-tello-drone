@@ -20,11 +20,12 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tello_msgs REQUIRED) 
+find_package(nav_msgs REQUIRED)
 
 add_executable(imu_publisher
   src/imu_publisher_node.cpp
 )
-ament_target_dependencies(imu_publisher rclcpp sensor_msgs tello_msgs)
+ament_target_dependencies(imu_publisher rclcpp sensor_msgs tello_msgs nav_msgs)
 
 
 install(TARGETS imu_publisher DESTINATION lib/${PROJECT_NAME})
