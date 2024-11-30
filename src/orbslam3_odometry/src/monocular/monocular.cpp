@@ -16,7 +16,7 @@ void MonocularSlamNode::loadParameters()
     declare_parameter("topic_camera_right", "/camera/right_image");
     declare_parameter("topic_imu", "/imu/data");
     declare_parameter("topic_orbslam_odometry", "/Odometry/orbSlamOdom");
-    declare_parameter("topic_header_frame_id", "fl_track");
+    declare_parameter("topic_header_frame_id", "map");
     declare_parameter("topic_child_frame_id", "orbslam3");
     declare_parameter("is_camera_left", true);
     declare_parameter("scale_position_mono", 1);

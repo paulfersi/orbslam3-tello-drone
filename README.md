@@ -79,9 +79,7 @@ Note: if the Pangolin visualizer says "waiting for image" it may not be detectin
 - to view imu data in rviz2:
 ```sudo apt install ros-foxy-imu-tools```
 
-Don't forget to set Fixed Frame as "base_link"
-
-For orbslam3 the Fixed Frame is "orbslam3"
+Don't forget to set Fixed Frame as "map"
 
 -> for octomap
 
