@@ -9,9 +9,10 @@ ImuPublisherNode::ImuPublisherNode() : Node("imu_publisher_node")
     imu_pub_ = this->create_publisher<sensor_msgs::msg::Imu>("/imu/data", 10);
     odometry_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("/odom", 10);
 
-    position_x = 0.0;
-    position_y = 0.0;
-    position_z = 0.0;
+    tf_broadcaster_ = std::make_shared<tf2_ros::TransformBroadcaster>(this);
+
+    position_x = 0.0, position_y = 0.0, position_z = 0.0;
+    velocity_x = 0.0, velocity_y = 0.0, velocity_z = 0.0;
 
     last_time = std::chrono::high_resolution_clock::now();
 
@@ -87,6 +88,24 @@ void ImuPublisherNode::compute_position(sensor_msgs::msg::Imu imu_msg){
     odom_msg.twist.twist.linear.z = velocity_z;
 
     odometry_pub_->publish(odom_msg);
+    publish_tf(odom_msg);
+    RCLCPP_INFO(this->get_logger(),"Odom msg sent \n");
+}
+
+void ImuPublisherNode::publish_tf(nav_msgs::msg::Odometry odom_msg){
+    std::geometry_msgs::msg::TransformStamped transform;
+
+    transform.header.stamp = odom_msg.header.stamp;
+    transform.header.frame_id = "map";
+    transform.child_frame_id = "imu_odom"
+
+    transform.transform.translation.x = odom_msg.pose.pose.position.x; 
+    transform.transform.translation.y = odom_msg.pose.pose.position.y; 
+    transform.transform.translation.z = odom_msg.pose.pose.position.z; 
+
+    transform.transform.rotation = odom_msg.pose.pose.orientation;
+
+    tf_broadcaster_->sendTransform(transform);
 }
 
 int main(int argc, char **argv)
