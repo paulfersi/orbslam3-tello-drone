@@ -59,7 +59,7 @@ MonoInertialSlamNode::MonoInertialSlamNode(ORB_SLAM3::System *pSLAM)
 
     quaternion_pub = this->create_publisher<nav_msgs::msg::Odometry>(topic_pub_quat, 10);
 
-    tf_broadcaster_ = std::make_shared<tf2_ros::TransformBroadcaster>(this);
+    tf_broadcaster_ = std::make_shared<tf2_ros::Transforquaternion_pubBroadcaster>(this);
 
     RCLCPP_INFO(this->get_logger(), "ORB-SLAM3 STARTED IN MONO-INERTIAL MODE.");
 }
