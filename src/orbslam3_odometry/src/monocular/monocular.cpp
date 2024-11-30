@@ -16,7 +16,7 @@ void MonocularSlamNode::loadParameters()
     declare_parameter("topic_camera_right", "/camera/right_image");
     declare_parameter("topic_imu", "/imu/data");
     declare_parameter("topic_orbslam_odometry", "/Odometry/orbSlamOdom");
-    declare_parameter("topic_header_frame_id", "os_track");
+    declare_parameter("topic_header_frame_id", "fl_track");
     declare_parameter("topic_child_frame_id", "orbslam3");
     declare_parameter("is_camera_left", true);
     declare_parameter("scale_position_mono", 1);
@@ -163,9 +163,9 @@ void MonocularSlamNode::GrabImage(const sensor_msgs::msg::Image::SharedPtr msg)
     output_pose.position.y = twc.x() * this->scale_position_mono;
     output_pose.position.z = twc.y() * this->scale_position_mono;
 
-    output_pose.orientation.x = -q.z();
-    output_pose.orientation.y = -q.x();
-    output_pose.orientation.z = -q.y();
+    output_pose.orientation.x = q.z();
+    output_pose.orientation.y = q.x();
+    output_pose.orientation.z = q.y();
     output_pose.orientation.w = q.w();
 
     if (this->degree_move_pose_mono != 0)
@@ -178,7 +178,7 @@ void MonocularSlamNode::GrabImage(const sensor_msgs::msg::Image::SharedPtr msg)
         tf2::Matrix3x3 m(tf2_quat);
         m.getRPY(roll, pitch, yaw);
 
-        tf2_quat.setRPY(0, 0, yaw + (this->degree_move_pose_mono * (M_PI / 180.0)));
+        tf2_quat.setRPY(roll + (this->degree_move_pose_mono * (M_PI / 180.0)), pitch + (this->degree_move_pose_mono * (M_PI / 180.0)), yaw + (this->degree_move_pose_mono * (M_PI / 180.0)));
         output_pose.orientation = tf2::toMsg(tf2_quat);
     }
 
@@ -195,9 +195,9 @@ void MonocularSlamNode::GrabImage(const sensor_msgs::msg::Image::SharedPtr msg)
     geometry_msgs::msg::TransformStamped transform;
     transform.header.stamp = this->now();
     transform.header.frame_id = this->header_id_frame;
-    transform.child_frame_id = this->child_id_frame;
+    transform.child_frame_id = this->child_id_frame;  
 
-    transform.transform.translation.x = output_pose.position.x;
+    transform.transform.translation.x = -output_pose.position.x;
     transform.transform.translation.y = output_pose.position.y;
     transform.transform.translation.z = output_pose.position.z;
     transform.transform.rotation = output_pose.orientation;
@@ -248,7 +248,7 @@ void MonocularSlamNode::GrabImage(const sensor_msgs::msg::Image::SharedPtr msg)
 
 // Key point color interpolation
 cv::Scalar MonocularSlamNode::interpolateColor(float value, float minDepth, float maxDepth) { 
-	// Doesn't working
+	// Doesn't work
     float range = maxDepth - minDepth;
     float normalized = (value - minDepth) / range;
 
