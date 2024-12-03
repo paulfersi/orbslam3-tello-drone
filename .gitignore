@@ -11,3 +11,4 @@ CameraTrajectory.txt
 KeyFrameTrajectory.txt
 src/TODO.md
 src/ros2-keyboard
+bags/
