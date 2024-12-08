@@ -16,7 +16,7 @@ class OccupancyGridPlotter(Node):
     def plot_occupancy_grid(self,occupancy_grid):
         width = occupancy_grid.info.width
         height = occupancy_grid.info.height
-        data = np.arrray(occupancy_grid.data,dtype=np.int8)
+        data = np.array(occupancy_grid.data,dtype=np.int8)
 
         grid = data.reshape((height,width))
 
