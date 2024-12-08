@@ -274,7 +274,7 @@ sensor_msgs::msg::PointCloud2 MonocularSlamNode::mappoint_to_pointcloud(std::vec
     sensor_msgs::msg::PointCloud2 cloud;
 
     cloud.header.stamp = msg_time;
-    cloud.header.frame_id = "orbslam3";	
+    cloud.header.frame_id = "map";	
     cloud.height = 1;
     cloud.width = map_points.size();
     std::cout << "Size map point: " << map_points.size() << std::endl;
