@@ -178,7 +178,7 @@ void MonocularSlamNode::GrabImage(const sensor_msgs::msg::Image::SharedPtr msg)
         tf2::Matrix3x3 m(tf2_quat);
         m.getRPY(roll, pitch, yaw);
 
-        tf2_quat.setRPY(roll + (this->degree_move_pose_mono * (M_PI / 180.0)), pitch + (this->degree_move_pose_mono * (M_PI / 180.0)), yaw + (this->degree_move_pose_mono * (M_PI / 180.0)));
+        tf2_quat.setRPY(0,0, -(yaw + (this->degree_move_pose_mono * (M_PI / 180.0))));
         output_pose.orientation = tf2::toMsg(tf2_quat);
     }
 
