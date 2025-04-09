@@ -34,8 +34,6 @@ class DroneMissionNode(Node):
         self.tello_cli = self.create_client(TelloAction, '/tello_action')
         while not self.tello_cli.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('Waiting for /tello_action service...')
-        
-        self.get_logger().info("Drone mission node started")
 
     def set_state(self, new_state):
         self.get_logger().info(f"STATE: {self.state} = {new_state}")
@@ -124,11 +122,18 @@ class DroneMissionNode(Node):
             self.send_tello_command('land')
             self.set_state('DONE')
 
-        # viz
+        # Visualization
         if ids is not None:
             cv2.aruco.drawDetectedMarkers(frame, corners, ids)
         cv2.imshow("Drone Camera", frame)
-        cv2.waitKey(1)
+
+        # Emergency feature for immediate landing
+        key = cv2.waitKey(1) & 0xFF
+        if key == ord('t') or key == ord('T'):
+            self.get_logger().warn('Emergency key [T] pressed! Landing immediately.')
+            self.send_tello_command('land')
+            self.set_state('DONE')
+
 
     def rotate(self):
         twist = Twist()

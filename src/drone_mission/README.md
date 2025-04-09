@@ -1,0 +1,1 @@
+You can press 'T' for immediate landing
