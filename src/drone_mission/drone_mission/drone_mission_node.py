@@ -22,8 +22,12 @@ class DroneMissionNode(Node):
         self.aruco_params = cv2.aruco.DetectorParameters_create()
         self.marker_length = 0.10  #meters
 
-        #calib default da modif
-        self.camera_matrix = np.array([[600, 0, 320], [0, 600, 240], [0, 0, 1]], dtype=np.float32)
+        #intrinsic params
+        self.camera_matrix = np.array([
+            [921.170702, 0.0,       459.904354],
+            [0.0,        919.018377, 351.238301],
+            [0.0,        0.0,        1.0]
+        ], dtype=np.float32)
         self.dist_coeffs = np.zeros((5, 1))
 
         # state machine setup
@@ -57,10 +61,10 @@ class DroneMissionNode(Node):
         if self.state == 'TAKEOFF':
             self.send_tello_command('takeoff')
             time.sleep(2)
-            self.set_state('SEARCH_MARKER_1')
+            self.set_state('SEARCH_MARKER_1') #when the state machine starts-> search for marker 1
 
         elif self.state.startswith('SEARCH_MARKER'):
-            target_id = int(self.state[-1])
+            target_id = int(self.state[-1]) #id of the marker to search
             if ids is not None and target_id in ids.flatten():
                 self.get_logger().info(f"Found marker {target_id}")
                 self.set_state(f'APPROACH_MARKER_{target_id}')
