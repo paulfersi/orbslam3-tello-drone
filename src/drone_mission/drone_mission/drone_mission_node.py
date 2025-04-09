@@ -34,6 +34,8 @@ class DroneMissionNode(Node):
         self.tello_cli = self.create_client(TelloAction, '/tello_action')
         while not self.tello_cli.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('Waiting for /tello_action service...')
+        
+        self.get_logger().info("Drone mission node started")
 
     def set_state(self, new_state):
         self.get_logger().info(f"STATE: {self.state} = {new_state}")

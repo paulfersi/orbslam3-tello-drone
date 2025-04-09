@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'drone_mission = drone_mission.drone_mission:main',
+            'drone_mission = drone_mission.drone_mission_node:main',
         ],
     },
 )
