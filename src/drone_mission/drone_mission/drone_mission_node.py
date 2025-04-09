@@ -68,6 +68,9 @@ class DroneMissionNode(Node):
             target_id = int(self.state[-1]) #id of the marker to search
             if ids is not None and target_id in ids.flatten():
                 self.get_logger().info(f"Found marker {target_id}")
+                twist = Twist()
+                twist.angular.z = 0.0
+                self.cmd_pub.publish(twist)
                 self.set_state(f'APPROACH_MARKER_{target_id}')
             else:
                 self.rotate()
@@ -90,6 +93,7 @@ class DroneMissionNode(Node):
                     twist.linear.x = 0.2
                 else:
                     self.get_logger().info(f"Positioned at marker {target_id}")
+                    twist.linear.x = 0.0
                     if target_id == 1:
                         self.set_state('TURN_LEFT')
                     elif target_id == 2:
